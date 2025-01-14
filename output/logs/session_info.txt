@@ -1,0 +1,46 @@
+R version 4.4.1 (2024-06-14)
+Platform: aarch64-apple-darwin20
+Running under: macOS Sonoma 14.4
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: America/New_York
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] tibble_3.2.1    ggplot2_3.5.1   tidyverse_2.0.0
+
+loaded via a namespace (and not attached):
+ [1] tidyr_1.3.1         Formula_1.2-5       pillar_1.10.0       quantreg_5.99.1    
+ [5] MatrixModels_0.5-3  timechange_0.3.0    pacman_0.5.1        pbkrtest_0.5.3     
+ [9] cli_3.6.3           evaluate_1.0.1      parallelly_1.41.0   foreign_0.8-87     
+[13] tools_4.4.1         cluster_2.1.8       compiler_4.4.1      multcompView_0.1-10
+[17] grid_4.4.1          labeling_0.4.3      gtable_0.3.6        knitr_1.49         
+[21] fastmap_1.2.0       sass_0.4.9          vroom_1.6.5         splines_4.4.1      
+[25] confintr_1.0.2      backports_1.5.0     lattice_0.22-6      checkmate_2.3.2    
+[29] minqa_1.2.8         colorspace_2.1-1    scales_1.3.0        lme4_1.1-35.5      
+[33] nnet_7.3-19         future_1.34.0       fs_1.6.5            nlme_3.1-166       
+[37] MASS_7.3-61         hms_1.1.3           stringr_1.5.1       rlang_1.1.4        
+[41] base64enc_0.1-3     abind_1.4-8         R6_2.5.1            bit_4.5.0.1        
+[45] Hmisc_5.2-1         stringi_1.8.4       pkgconfig_2.0.3     SparseM_1.84-2     
+[49] xtable_1.8-4        tzdb_0.4.0          furrr_0.3.1         survival_3.8-3     
+[53] data.table_1.16.4   polynom_1.4-1       ragg_1.3.3          Rcpp_1.0.13-1      
+[57] coda_0.19-4.1       bit64_4.5.2         yaml_2.3.10         globals_0.16.3     
+[61] numDeriv_2016.8-1.1 sandwich_3.1-1      listenv_0.9.1       purrr_1.0.2        
+[65] htmlTable_2.4.3     mgcv_1.9-1          generics_0.1.3      textshaping_0.4.1  
+[69] lifecycle_1.0.4     munsell_0.5.1       systemfonts_1.1.0   rstudioapi_0.17.1  
+[73] htmlwidgets_1.6.4   zoo_1.8-12          dplyr_1.1.4         utf8_1.2.4         
+[77] vctrs_0.6.5         glue_1.8.0          digest_0.6.37       Matrix_1.7-1       
+[81] htmltools_0.5.8.1   broom_1.0.7         mvtnorm_1.3-3       farver_2.1.2       
+[85] withr_3.0.2         magrittr_2.0.3      crayon_1.5.3        estimability_1.5.1 
+[89] xml2_1.3.6          nloptr_2.1.1        rmarkdown_2.29      boot_1.3-31        
+[93] codetools_0.2-20    gridExtra_2.3       parallel_4.4.1      rpart_4.1.23       
+[97] xfun_0.49           tidyselect_1.2.1   

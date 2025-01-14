@@ -1,0 +1,16 @@
+Random Forest Model Summary:
+
+Call:
+ randomForest(formula = AverageGreenLeafLength ~ ., data = rf_data_avg,      importance = TRUE, ntree = 10000) 
+               Type of random forest: regression
+                     Number of trees: 10000
+No. of variables tried at each split: 1
+
+          Mean of squared residuals: 10.87115
+                    % Var explained: 46.52
+
+Variable Importance:
+               %IncMSE IncNodePurity
+Population    135.0583      664.7502
+TreatmentName 131.4568      626.5954
+DOY           176.2538     1500.1961

@@ -1,0 +1,94 @@
+Water Potential Model Summary:
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: `Pressure (MPa)` ~ Population * `Treatment Name` + (1 | Tag) +      (1 | Date)
+   Data: wpot
+
+REML criterion at convergence: 52.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.7408 -0.6830  0.1405  0.5980  2.0091 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept) 0.000000 0.00000 
+ Date     (Intercept) 0.004419 0.06648 
+ Residual             0.088575 0.29761 
+Number of obs: 84, groups:  Tag, 54; Date, 3
+
+Fixed effects:
+                                        Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                             -1.24379    0.10260 22.27608 -12.122 2.77e-11 ***
+PopulationToolik                        -0.02000    0.13310 73.32424  -0.150    0.881    
+PopulationColdfoot                       0.00500    0.13310 73.32424   0.038    0.970    
+`Treatment Name`Dry                      0.06761    0.14173 74.24525   0.477    0.635    
+`Treatment Name`Deep                    -0.16000    0.13310 73.32424  -1.202    0.233    
+PopulationToolik:`Treatment Name`Dry     0.05750    0.19965 73.32424   0.288    0.774    
+PopulationColdfoot:`Treatment Name`Dry  -0.13625    0.19965 73.32424  -0.682    0.497    
+PopulationToolik:`Treatment Name`Deep    0.04500    0.18823 73.32424   0.239    0.812    
+PopulationColdfoot:`Treatment Name`Deep  0.15000    0.18823 73.32424   0.797    0.428    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+                        (Intr) PpltnT PpltnC `TrtmntNm`Dr `TrtmntNm`Dp PpltnTlk:`TrtmntNm`Dr PpltnCldft:`TrtmntNm`Dr
+PopulatnTlk             -0.649                                                                                      
+PopltnCldft             -0.649  0.500                                                                               
+`TrtmntNm`Dr            -0.601  0.470  0.470                                                                        
+`TrtmntNm`Dp            -0.649  0.500  0.500  0.470                                                                 
+PpltnTlk:`TrtmntNm`Dr    0.432 -0.667 -0.333 -0.704       -0.333                                                    
+PpltnCldft:`TrtmntNm`Dr  0.432 -0.333 -0.667 -0.704       -0.333        0.500                                       
+PpltnTlk:`TrtmntNm`Dp    0.459 -0.707 -0.354 -0.332       -0.707        0.471                 0.236                 
+PpltnCldft:`TrtmntNm`Dp  0.459 -0.354 -0.707 -0.332       -0.707        0.236                 0.471                 
+                        PpltnTlk:`TrtmntNm`Dp
+PopulatnTlk                                  
+PopltnCldft                                  
+`TrtmntNm`Dr                                 
+`TrtmntNm`Dp                                 
+PpltnTlk:`TrtmntNm`Dr                        
+PpltnCldft:`TrtmntNm`Dr                      
+PpltnTlk:`TrtmntNm`Dp                        
+PpltnCldft:`TrtmntNm`Dp  0.500               
+optimizer (nloptwrap) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+Type III Analysis of Variance Table with Satterthwaite's method
+                              Sum Sq  Mean Sq NumDF  DenDF F value Pr(>F)
+Population                  0.002894 0.001447     2 73.324  0.0163 0.9838
+`Treatment Name`            0.266745 0.133373     2 74.684  1.5058 0.2285
+Population:`Treatment Name` 0.262089 0.065522     4 73.324  0.7397 0.5679
+
+Estimated Marginal Means:
+ Population Treatment Name emmean    SE   df lower.CL upper.CL
+ Sagwon     Wet             -1.24 0.105 16.1    -1.47   -1.021
+ Toolik     Wet             -1.26 0.106 14.6    -1.49   -1.036
+ Coldfoot   Wet             -1.24 0.105 16.1    -1.46   -1.016
+ Sagwon     Dry             -1.18 0.121 20.7    -1.43   -0.925
+ Toolik     Dry             -1.14 0.121 20.7    -1.39   -0.888
+ Coldfoot   Dry             -1.31 0.121 20.7    -1.56   -1.056
+ Sagwon     Deep            -1.40 0.105 16.1    -1.63   -1.181
+ Toolik     Deep            -1.38 0.106 14.6    -1.61   -1.151
+ Coldfoot   Deep            -1.25 0.106 14.6    -1.48   -1.021
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+Pairwise Comparisons:
+ Population Treatment Name emmean    SE   df lower.CL upper.CL .group
+ Sagwon     Deep            -1.40 0.105 16.1    -1.63   -1.181  a    
+ Toolik     Deep            -1.38 0.106 14.6    -1.61   -1.151  a    
+ Coldfoot   Dry             -1.31 0.121 20.7    -1.56   -1.056  a    
+ Toolik     Wet             -1.26 0.106 14.6    -1.49   -1.036  a    
+ Coldfoot   Deep            -1.25 0.106 14.6    -1.48   -1.021  a    
+ Sagwon     Wet             -1.24 0.105 16.1    -1.47   -1.021  a    
+ Coldfoot   Wet             -1.24 0.105 16.1    -1.46   -1.016  a    
+ Sagwon     Dry             -1.18 0.121 20.7    -1.43   -0.925  a    
+ Toolik     Dry             -1.14 0.121 20.7    -1.39   -0.888  a    
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+P value adjustment: tukey method for comparing a family of 9 estimates 
+significance level used: alpha = 0.05 
+NOTE: If two or more means share the same grouping symbol,
+      then we cannot show them to be different.
+      But we also did not show them to be the same. 

@@ -1,0 +1,198 @@
+
+Running 00_setup.R...
+
+> # 00_setup.R
+> # Get all loaded packages
+> loaded_packages <- names(sessionInfo()$otherPkgs)
+
+> # Detach each one
+> if(!is.null(loaded_packages)) {
++   sapply(paste0("package:", loaded_packages), detach, character.only = TRUE, unload = TRUE)
++  .... [TRUNCATED] 
+Warning in 00_setup.R: ‘tibble’ namespace cannot be unloaded:
+  namespace ‘tibble’ is imported by ‘ggplot2’, ‘broom’, ‘dplyr’, ‘tidyr’ so cannot be unloaded
+
+Running 01_soil_moisture.R...
+
+> # 01_soil_moisture.R
+> source("R/00_setup.R")
+Warning in 01_soil_moisture.R: ‘ggplot2’ namespace cannot be unloaded:
+  namespace ‘ggplot2’ is imported by ‘Hmisc’ so cannot be unloaded
+
+Running 02_phenology.R...
+
+> # 02_phenology.R
+> 
+> # ----------------------------------
+> # Load setup and utilities
+> # ----------------------------------
+> source("R/00_setup. ..." ... [TRUNCATED] 
+
+> # ----------------------------------
+> # Step 1: Read and Process Data
+> # ----------------------------------
+> pheno <- read_csv("data/raw/Ecotypes ..." ... [TRUNCATED] 
+indexed 3.00B in  0s, 740.17kB/s                                                                                               indexed 1.00TB in  0s, 3.76PB/s                                                                                               New names:
+• `L1 Total Length` -> `L1 Total Length...8`
+• `L1 Total Length` -> `L1 Total Length...10`
+Rows: 336 Columns: 22
+── Column specification ─────────────────────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (4): Population, Treatment Name, Tag, Date
+dbl (18): Treatment, Replicate, DOY, L1 Total Length...8, L1 Green Length, L1 Total Length......
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+> # ----------------------------------
+> # Step 2: Plot Phenology Metrics Over Time
+> # ----------------------------------
+> plot_pheno_metric <- func .... [TRUNCATED] 
+
+> # Generate time series plots
+> tot_gl_plot <- plot_pheno_metric(pheno, "TillerTotalGreenLength", "Total Green Length (cm)")
+
+> pct_green_plot <- plot_pheno_metric(pheno, "TillerPercentGreen", "Percent Green (%)")
+
+> avg_green_plot <- plot_pheno_metric(pheno, "AverageGreenLeafLength", "Mean Green Length (cm)")
+
+> # ----------------------------------
+> # Step 3: Fit Mixed-Effects Models
+> # ----------------------------------
+> tiller_model <- lmer(TillerTotalG .... [TRUNCATED] 
+
+> percent_green_model <- lmer(TillerPercentGreen ~ `Treatment Name` * Population * poly(DOY, 2) + (1 | Tag), data = pheno)
+
+> avg_green_length_model <- lmer(AverageGreenLeafLength ~ `Treatment Name` * Population * poly(DOY, 2) + (1 | Tag), data = pheno)
+
+> # ----------------------------------
+> # Step 4: Save Model Summaries
+> # ----------------------------------
+> sink("output/tables/phenology_model_s ..." ... [TRUNCATED] 
+
+Correlation matrix not shown by default, as p = 27 > 12.
+Use print(summary(tiller_model), correlation=TRUE)  or
+    vcov(summary(tiller_model))        if you need it
+
+
+Correlation matrix not shown by default, as p = 27 > 12.
+Use print(summary(percent_green_model), correlation=TRUE)  or
+    vcov(summary(percent_green_model))        if you need it
+
+
+Correlation matrix not shown by default, as p = 27 > 12.
+Use print(summary(avg_green_length_model), correlation=TRUE)  or
+    vcov(summary(avg_green_length_model))        if you need it
+
+
+> # ----------------------------------
+> # Step 5: Random Forest Models
+> # ----------------------------------
+> rf_data_total <- pheno %>%
++   dplyr: .... [TRUNCATED] 
+
+> rf_data_percent <- pheno %>%
++   dplyr::select(TillerPercentGreen, Population, TreatmentName, DOY) %>%
++   drop_na()
+
+> rf_data_avg <- pheno %>%
++   dplyr::select(AverageGreenLeafLength, Population, TreatmentName, DOY) %>%
++   drop_na()
+
+> set.seed(123)
+
+> rf_total <- randomForest(TillerTotalGreenLength ~ ., data = rf_data_total, importance = TRUE, ntree = 10000)
+
+> rf_percent <- randomForest(TillerPercentGreen ~ ., data = rf_data_percent, importance = TRUE, ntree = 10000)
+
+> rf_avg <- randomForest(AverageGreenLeafLength ~ ., data = rf_data_avg, importance = TRUE, ntree = 10000)
+
+> # ----------------------------------
+> # Step 6: Create Variable Importance Plots
+> # ----------------------------------
+> varImpPlot_to_gg <- funct .... [TRUNCATED] 
+
+> imp_total_plot <- varImpPlot_to_gg(rf_total)
+
+> imp_percent_plot <- varImpPlot_to_gg(rf_percent)
+
+> imp_avg_plot <- varImpPlot_to_gg(rf_avg)
+
+> # ----------------------------------
+> # Step 7: Combine Time Series Plots and Importance Plots
+> # ----------------------------------
+> final_plot  .... [TRUNCATED] 
+
+> ggsave("output/figures/phenology_combined.pdf", final_plot, width = 8, height = 7, units = "in", dpi = 600)
+
+> # ----------------------------------
+> # Step 8: Save Fixed Effects Summary as a Polished Table
+> # ----------------------------------
+> 
+> # Extrac .... [TRUNCATED] 
+
+> # Save fixed effects as a .txt file
+> sink("output/tables/phenology_fixed_effects_summary.txt")
+
+> # Save a polished version using gt
+> fixed_effects_summary %>%
++   dplyr::select(Metric, term, estimate, std.error, df, statistic, p.value) %>%
++    .... [TRUNCATED] 
+Error in 02_phenology.R: `data` must either be a `gt_tbl` or a `gt_group`, not a string.
+
+Running 03_canopy.R...
+
+> # 03_canopy.R
+> source("R/00_setup.R")
+Warning in 03_canopy.R: ‘broom’ namespace cannot be unloaded:
+  namespace ‘broom’ is imported by ‘pbkrtest’ so cannot be unloaded
+
+Running 04_gas_exchange.R...
+
+> # 04_gas_exchange.R
+> source("R/00_setup.R")
+Warning in 04_gas_exchange.R: ‘boot’ namespace cannot be unloaded:
+  namespace ‘boot’ is imported by ‘lme4’ so cannot be unloaded
+
+Running 05_water_potential.R...
+
+> # 05_water_potential.R
+> source("R/00_setup.R")
+Warning in 05_water_potential.R: ‘MASS’ namespace cannot be unloaded:
+  namespace ‘MASS’ is imported by ‘lmerTest’, ‘lme4’, ‘pbkrtest’, ‘quantreg’ so cannot be unloaded
+
+Running 06_aci_curves.R...
+
+> # 06_aci_curves.R
+> source("R/00_setup.R")
+Warning in 06_aci_curves.R: ‘survival’ namespace cannot be unloaded:
+  namespace ‘survival’ is imported by ‘quantreg’ so cannot be unloaded
+
+Running 07_isotopes.R...
+
+> # 07_isotopes.R
+> source("R/00_setup.R")
+Warning in 07_isotopes.R: ‘mvtnorm’ namespace cannot be unloaded:
+  namespace ‘mvtnorm’ is imported by ‘emmeans’ so cannot be unloaded
+
+Running 08_combined_physiology.R...
+
+> # 08_combined_physiology.R
+> source("R/00_setup.R")
+Warning in 08_combined_physiology.R: ‘lme4’ namespace cannot be unloaded:
+  namespace ‘lme4’ is imported by ‘pbkrtest’ so cannot be unloaded
+
+Running 09_productivity.R...
+
+> # 09_productivity.R
+> source("R/00_setup.R")
+Warning in 09_productivity.R: ‘Matrix’ namespace cannot be unloaded:
+  namespace ‘Matrix’ is imported by ‘mgcv’, ‘survival’, ‘lme4’, ‘pbkrtest’, ‘MatrixModels’, ‘quantreg’ so cannot be unloaded
+
+Running 10_model_diagnostics.R...
+
+> # 10_model_diagnostics.R
+> # Model diagnostic checks for all fitted models
+> source("R/00_setup.R")
+Warning in 10_model_diagnostics.R: ‘nlme’ namespace cannot be unloaded:
+  namespace ‘nlme’ is imported by ‘mgcv’, ‘lme4’ so cannot be unloaded

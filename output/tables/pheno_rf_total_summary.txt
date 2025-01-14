@@ -1,0 +1,16 @@
+Random Forest Model Summary:
+
+Call:
+ randomForest(formula = TillerTotalGreenLength ~ ., data = rf_data_total,      importance = TRUE, ntree = 10000) 
+               Type of random forest: regression
+                     Number of trees: 10000
+No. of variables tried at each split: 1
+
+          Mean of squared residuals: 225.8909
+                    % Var explained: 32.44
+
+Variable Importance:
+                %IncMSE IncNodePurity
+Population     91.97632      6926.163
+TreatmentName 132.36562     10139.763
+DOY           165.01167     19122.323

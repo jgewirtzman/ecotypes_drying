@@ -1,0 +1,263 @@
+Tiller Total Green Length Model:
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: TillerTotalGreenLength ~ `Treatment Name` * Population * poly(DOY,      2) + (1 | Tag)
+   Data: pheno
+
+REML criterion at convergence: 2193.2
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.73883 -0.52254  0.00753  0.50531  3.04601 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept) 164.73   12.835  
+ Residual              62.97    7.935  
+Number of obs: 326, groups:  Tag, 48
+
+Fixed effects:
+                                                      Estimate Std. Error        df t value
+(Intercept)                                            26.4068     5.3809   38.9615   4.908
+`Treatment Name`Dry                                    -3.2230     8.5137   39.0664  -0.379
+`Treatment Name`Wet                                    11.9490     9.3200   38.9615   1.282
+PopulationToolik                                        2.0861     7.6097   38.9615   0.274
+PopulationColdfoot                                      3.5275     7.6097   38.9615   0.464
+poly(DOY, 2)1                                         -58.3270    22.1030  260.1611  -2.639
+poly(DOY, 2)2                                         -81.4877    22.2012  260.1611  -3.670
+`Treatment Name`Dry:PopulationToolik                   -2.2288    11.4250   39.1029  -0.195
+`Treatment Name`Wet:PopulationToolik                  -14.5504    12.0521   39.2130  -1.207
+`Treatment Name`Dry:PopulationColdfoot                  0.4909    11.6697   39.0173   0.042
+`Treatment Name`Wet:PopulationColdfoot                  6.7710    12.0321   38.9615   0.563
+`Treatment Name`Dry:poly(DOY, 2)1                     -75.7998    34.9493  260.1614  -2.169
+`Treatment Name`Wet:poly(DOY, 2)1                    -120.3143    38.2835  260.1611  -3.143
+`Treatment Name`Dry:poly(DOY, 2)2                      11.1168    35.6434  260.2667   0.312
+`Treatment Name`Wet:poly(DOY, 2)2                     -71.1289    38.4536  260.1611  -1.850
+PopulationToolik:poly(DOY, 2)1                          1.4565    31.2583  260.1611   0.047
+PopulationColdfoot:poly(DOY, 2)1                      -14.6876    31.2583  260.1611  -0.470
+PopulationToolik:poly(DOY, 2)2                        -34.1363    31.3973  260.1611  -1.087
+PopulationColdfoot:poly(DOY, 2)2                       22.8474    31.3973  260.1611   0.728
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)1     57.8062    47.4199  260.2161   1.219
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)1     68.4437    51.2094  261.2675   1.337
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)1   21.0099    47.9192  260.1612   0.438
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)1   60.4826    49.4237  260.1611   1.224
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)2     28.7001    47.5017  260.2208   0.604
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)2     66.0750    50.6004  260.2681   1.306
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)2  -14.8963    48.5265  260.2181  -0.307
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)2  -81.9092    49.6434  260.1611  -1.650
+                                                     Pr(>|t|)    
+(Intercept)                                          1.68e-05 ***
+`Treatment Name`Dry                                  0.707056    
+`Treatment Name`Wet                                  0.207389    
+PopulationToolik                                     0.785426    
+PopulationColdfoot                                   0.645546    
+poly(DOY, 2)1                                        0.008820 ** 
+poly(DOY, 2)2                                        0.000294 ***
+`Treatment Name`Dry:PopulationToolik                 0.846339    
+`Treatment Name`Wet:PopulationToolik                 0.234552    
+`Treatment Name`Dry:PopulationColdfoot               0.966659    
+`Treatment Name`Wet:PopulationColdfoot               0.576830    
+`Treatment Name`Dry:poly(DOY, 2)1                    0.031000 *  
+`Treatment Name`Wet:poly(DOY, 2)1                    0.001868 ** 
+`Treatment Name`Dry:poly(DOY, 2)2                    0.755375    
+`Treatment Name`Wet:poly(DOY, 2)2                    0.065486 .  
+PopulationToolik:poly(DOY, 2)1                       0.962872    
+PopulationColdfoot:poly(DOY, 2)1                     0.638835    
+PopulationToolik:poly(DOY, 2)2                       0.277938    
+PopulationColdfoot:poly(DOY, 2)2                     0.467459    
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)1   0.223937    
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)1   0.182534    
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)1 0.661427    
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)1 0.222151    
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)2   0.546244    
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)2   0.192767    
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)2 0.759110    
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)2 0.100160    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Type III Analysis of Variance Table with Satterthwaite's method
+                                          Sum Sq Mean Sq NumDF   DenDF  F value    Pr(>F)    
+`Treatment Name`                           463.8   231.9     2  39.131   3.6828   0.03424 *  
+Population                                 285.0   142.5     2  39.150   2.2635   0.11743    
+poly(DOY, 2)                             20893.5 10446.7     2 260.475 165.9084 < 2.2e-16 ***
+`Treatment Name`:Population                296.9    74.2     4  39.148   1.1786   0.33518    
+`Treatment Name`:poly(DOY, 2)             2451.1   612.8     4 260.452   9.7318 2.376e-07 ***
+Population:poly(DOY, 2)                    325.6    81.4     4 260.485   1.2928   0.27322    
+`Treatment Name`:Population:poly(DOY, 2)   900.1   112.5     8 260.461   1.7868   0.07983 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Percent Green Model:
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: TillerPercentGreen ~ `Treatment Name` * Population * poly(DOY,      2) + (1 | Tag)
+   Data: pheno
+
+REML criterion at convergence: -238.5
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2453 -0.5015  0.0166  0.4695  3.0001 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept) 0.03391  0.1841  
+ Residual             0.01943  0.1394  
+Number of obs: 326, groups:  Tag, 48
+
+Fixed effects:
+                                                      Estimate Std. Error        df t value
+(Intercept)                                            0.77758    0.07819  38.87542   9.944
+`Treatment Name`Dry                                   -0.19983    0.12376  39.02747  -1.615
+`Treatment Name`Wet                                   -0.08928    0.13543  38.87542  -0.659
+PopulationToolik                                      -0.05617    0.11058  38.87542  -0.508
+PopulationColdfoot                                    -0.23702    0.11058  38.87542  -2.143
+poly(DOY, 2)1                                         -2.89974    0.38827 260.16349  -7.468
+poly(DOY, 2)2                                         -1.65778    0.38999 260.16349  -4.251
+`Treatment Name`Dry:PopulationToolik                   0.12631    0.16609  39.08066   0.760
+`Treatment Name`Wet:PopulationToolik                   0.05679    0.17526  39.23111   0.324
+`Treatment Name`Dry:PopulationColdfoot                 0.22206    0.16961  38.95627   1.309
+`Treatment Name`Wet:PopulationColdfoot                 0.34160    0.17484  38.87542   1.954
+`Treatment Name`Dry:poly(DOY, 2)1                     -0.23499    0.61393 260.16392  -0.383
+`Treatment Name`Wet:poly(DOY, 2)1                     -1.08076    0.67250 260.16349  -1.607
+`Treatment Name`Dry:poly(DOY, 2)2                      0.69898    0.62609 260.31708   1.116
+`Treatment Name`Wet:poly(DOY, 2)2                     -0.51112    0.67549 260.16349  -0.757
+PopulationToolik:poly(DOY, 2)1                        -0.45366    0.54909 260.16349  -0.826
+PopulationColdfoot:poly(DOY, 2)1                      -0.02412    0.54909 260.16349  -0.044
+PopulationToolik:poly(DOY, 2)2                         0.17265    0.55153 260.16349   0.313
+PopulationColdfoot:poly(DOY, 2)2                       1.67216    0.55153 260.16349   3.032
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)1     0.57800    0.83297 260.24359   0.694
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)1     0.38506    0.89912 261.73140   0.428
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)1  -0.20802    0.84176 260.16372  -0.247
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)1   0.62011    0.86819 260.16349   0.714
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)2    -0.50719    0.83441 260.25026  -0.608
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)2    -0.42173    0.88882 260.31519  -0.474
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)2  -1.53564    0.85241 260.24637  -1.802
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)2  -1.98472    0.87205 260.16349  -2.276
+                                                     Pr(>|t|)    
+(Intercept)                                          3.10e-12 ***
+`Treatment Name`Dry                                   0.11442    
+`Treatment Name`Wet                                   0.51366    
+PopulationToolik                                      0.61434    
+PopulationColdfoot                                    0.03840 *  
+poly(DOY, 2)1                                        1.23e-12 ***
+poly(DOY, 2)2                                        2.97e-05 ***
+`Treatment Name`Dry:PopulationToolik                  0.45153    
+`Treatment Name`Wet:PopulationToolik                  0.74764    
+`Treatment Name`Dry:PopulationColdfoot                0.19811    
+`Treatment Name`Wet:PopulationColdfoot                0.05795 .  
+`Treatment Name`Dry:poly(DOY, 2)1                     0.70220    
+`Treatment Name`Wet:poly(DOY, 2)1                     0.10925    
+`Treatment Name`Dry:poly(DOY, 2)2                     0.26527    
+`Treatment Name`Wet:poly(DOY, 2)2                     0.44993    
+PopulationToolik:poly(DOY, 2)1                        0.40945    
+PopulationColdfoot:poly(DOY, 2)1                      0.96500    
+PopulationToolik:poly(DOY, 2)2                        0.75451    
+PopulationColdfoot:poly(DOY, 2)2                      0.00268 ** 
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)1    0.48836    
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)1    0.66881    
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)1  0.80500    
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)1  0.47571    
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)2    0.54382    
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)2    0.63555    
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)2  0.07278 .  
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)2  0.02366 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Type III Analysis of Variance Table with Satterthwaite's method
+                                          Sum Sq Mean Sq NumDF   DenDF  F value    Pr(>F)    
+`Treatment Name`                          0.0628  0.0314     2  39.118   1.6168 0.2115233    
+Population                                0.0155  0.0078     2  39.144   0.4000 0.6730472    
+poly(DOY, 2)                             12.5513  6.2757     2 260.610 322.9895 < 2.2e-16 ***
+`Treatment Name`:Population               0.1087  0.0272     4  39.141   1.3982 0.2525086    
+`Treatment Name`:poly(DOY, 2)             0.4442  0.1111     4 260.576   5.7155 0.0002007 ***
+Population:poly(DOY, 2)                   0.0899  0.0225     4 260.624   1.1572 0.3302119    
+`Treatment Name`:Population:poly(DOY, 2)  0.1790  0.0224     8 260.590   1.1518 0.3290901    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Average Green Leaf Length Model:
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: AverageGreenLeafLength ~ `Treatment Name` * Population * poly(DOY,      2) + (1 | Tag)
+   Data: pheno
+
+REML criterion at convergence: 1386.2
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.6359 -0.5314 -0.0240  0.5178  4.1001 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept) 5.597    2.366   
+ Residual             4.649    2.156   
+Number of obs: 326, groups:  Tag, 48
+
+Fixed effects:
+                                                     Estimate Std. Error       df t value
+(Intercept)                                            6.7669     1.0215  38.8799   6.625
+`Treatment Name`Dry                                   -1.1362     1.6174  39.0914  -0.703
+`Treatment Name`Wet                                    2.2389     1.7693  38.8799   1.265
+PopulationToolik                                      -0.5044     1.4446  38.8799  -0.349
+PopulationColdfoot                                     1.2208     1.4446  38.8799   0.845
+poly(DOY, 2)1                                        -29.5790     6.0058 260.2773  -4.925
+poly(DOY, 2)2                                        -12.6565     6.0325 260.2773  -2.098
+`Treatment Name`Dry:PopulationToolik                   0.9072     2.1709  39.1658   0.418
+`Treatment Name`Wet:PopulationToolik                  -1.7732     2.2917  39.3597  -0.774
+`Treatment Name`Dry:PopulationColdfoot                 0.5921     2.2162  38.9924   0.267
+`Treatment Name`Wet:PopulationColdfoot                 2.7944     2.2841  38.8799   1.223
+`Treatment Name`Dry:poly(DOY, 2)1                     -3.9344     9.4964 260.2779  -0.414
+`Treatment Name`Wet:poly(DOY, 2)1                    -26.8268    10.4023 260.2773  -2.579
+`Treatment Name`Dry:poly(DOY, 2)2                      2.2881     9.6840 260.4907   0.236
+`Treatment Name`Wet:poly(DOY, 2)2                     -8.1636    10.4486 260.2773  -0.781
+PopulationToolik:poly(DOY, 2)1                         0.6717     8.4935 260.2773   0.079
+PopulationColdfoot:poly(DOY, 2)1                     -14.9239     8.4935 260.2773  -1.757
+PopulationToolik:poly(DOY, 2)2                         2.9035     8.5312 260.2773   0.340
+PopulationColdfoot:poly(DOY, 2)2                      15.2619     8.5312 260.2773   1.789
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)1    -2.1360    12.8842 260.3888  -0.166
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)1    16.0019    13.8995 262.3874   1.151
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)1   1.8409    13.0205 260.2776   0.141
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)1  17.3415    13.4294 260.2773   1.291
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)2     1.9034    12.9063 260.3979   0.147
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)2    -7.1406    13.7476 260.4816  -0.519
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)2 -11.8106    13.1848 260.3925  -0.896
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)2 -38.0578    13.4891 260.2773  -2.821
+                                                     Pr(>|t|)    
+(Intercept)                                          7.15e-08 ***
+`Treatment Name`Dry                                   0.48653    
+`Treatment Name`Wet                                   0.21326    
+PopulationToolik                                      0.72886    
+PopulationColdfoot                                    0.40326    
+poly(DOY, 2)1                                        1.50e-06 ***
+poly(DOY, 2)2                                         0.03686 *  
+`Treatment Name`Dry:PopulationToolik                  0.67831    
+`Treatment Name`Wet:PopulationToolik                  0.44370    
+`Treatment Name`Dry:PopulationColdfoot                0.79076    
+`Treatment Name`Wet:PopulationColdfoot                0.22854    
+`Treatment Name`Dry:poly(DOY, 2)1                     0.67899    
+`Treatment Name`Wet:poly(DOY, 2)1                     0.01046 *  
+`Treatment Name`Dry:poly(DOY, 2)2                     0.81340    
+`Treatment Name`Wet:poly(DOY, 2)2                     0.43533    
+PopulationToolik:poly(DOY, 2)1                        0.93703    
+PopulationColdfoot:poly(DOY, 2)1                      0.08008 .  
+PopulationToolik:poly(DOY, 2)2                        0.73388    
+PopulationColdfoot:poly(DOY, 2)2                      0.07479 .  
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)1    0.86845    
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)1    0.25067    
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)1  0.88768    
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)1  0.19774    
+`Treatment Name`Dry:PopulationToolik:poly(DOY, 2)2    0.88287    
+`Treatment Name`Wet:PopulationToolik:poly(DOY, 2)2    0.60392    
+`Treatment Name`Dry:PopulationColdfoot:poly(DOY, 2)2  0.37120    
+`Treatment Name`Wet:PopulationColdfoot:poly(DOY, 2)2  0.00515 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Type III Analysis of Variance Table with Satterthwaite's method
+                                          Sum Sq Mean Sq NumDF   DenDF  F value    Pr(>F)    
+`Treatment Name`                           60.17   30.09     2  39.210   6.4716  0.003726 ** 
+Population                                 67.04   33.52     2  39.246   7.2103  0.002153 ** 
+poly(DOY, 2)                             1773.94  886.97     2 260.880 190.7910 < 2.2e-16 ***
+`Treatment Name`:Population                33.17    8.29     4  39.241   1.7835  0.151597    
+`Treatment Name`:poly(DOY, 2)             144.27   36.07     4 260.834   7.7582 6.385e-06 ***
+Population:poly(DOY, 2)                    35.27    8.82     4 260.898   1.8966  0.111407    
+`Treatment Name`:Population:poly(DOY, 2)   58.65    7.33     8 260.853   1.5770  0.131790    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

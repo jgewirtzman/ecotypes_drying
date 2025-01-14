@@ -1,0 +1,93 @@
+Mixed Model Summary:
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: GWC ~ `Treatment Name` * Population + (1 | Tag)
+   Data: soil_gwc
+
+REML criterion at convergence: 960.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.1399 -0.4923  0.1756  0.6262  2.2443 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept) 0.1584   0.3980  
+ Residual             0.6583   0.8113  
+Number of obs: 374, groups:  Tag, 54
+
+Fixed effects:
+                                        Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                              4.27840    0.20512 44.36783  20.858  < 2e-16 ***
+`Treatment Name`Dry                     -1.15697    0.29008 44.36783  -3.988 0.000245 ***
+`Treatment Name`Deep                    -2.23799    0.29008 44.36783  -7.715 9.84e-10 ***
+PopulationToolik                         0.34812    0.29008 44.36783   1.200 0.236471    
+PopulationColdfoot                       0.51664    0.29008 44.36783   1.781 0.081754 .  
+`Treatment Name`Dry:PopulationToolik     0.22247    0.41177 45.01843   0.540 0.591674    
+`Treatment Name`Deep:PopulationToolik   -0.41846    0.41023 44.36783  -1.020 0.313228    
+`Treatment Name`Dry:PopulationColdfoot   0.04073    0.41074 44.57582   0.099 0.921452    
+`Treatment Name`Deep:PopulationColdfoot -0.36211    0.41023 44.36783  -0.883 0.382156    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+             (Intr) `TrtmntNm`Dr `TrtmntNm`Dp PpltnT PpltnC `TNm`Dr:PT `TNm`Dp:PT `TNm`Dr:PC
+`TrtmntNm`Dr -0.707                                                                         
+`TrtmntNm`Dp -0.707  0.500                                                                  
+PopulatnTlk  -0.707  0.500        0.500                                                     
+PopltnCldft  -0.707  0.500        0.500        0.500                                        
+`TNm`Dry:PT   0.498 -0.704       -0.352       -0.704 -0.352                                 
+`TNm`Dp:PpT   0.500 -0.354       -0.707       -0.707 -0.354  0.498                          
+`TNm`Dry:PC   0.499 -0.706       -0.353       -0.353 -0.706  0.498      0.250               
+`TNm`Dp:PpC   0.500 -0.354       -0.707       -0.354 -0.707  0.249      0.500      0.499    
+
+ANOVA Table:
+Type III Analysis of Variance Table with Satterthwaite's method
+                            Sum Sq Mean Sq NumDF  DenDF  F value  Pr(>F)    
+`Treatment Name`            147.47  73.736     2 44.747 112.0139 < 2e-16 ***
+Population                    4.12   2.060     2 44.748   3.1295 0.05344 .  
+`Treatment Name`:Population   1.77   0.442     4 44.745   0.6721 0.61482    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Estimated Marginal Means:
+Population = Sagwon:
+ Treatment Name emmean    SE   df lower.CL upper.CL
+ Wet              4.28 0.205 44.6     3.87     4.69
+ Dry              3.12 0.205 44.6     2.71     3.53
+ Deep             2.04 0.205 44.6     1.63     2.45
+
+Population = Toolik:
+ Treatment Name emmean    SE   df lower.CL upper.CL
+ Wet              4.63 0.205 44.6     4.21     5.04
+ Dry              3.69 0.208 47.3     3.27     4.11
+ Deep             1.97 0.205 44.6     1.56     2.38
+
+Population = Coldfoot:
+ Treatment Name emmean    SE   df lower.CL upper.CL
+ Wet              4.80 0.205 44.6     4.38     5.21
+ Dry              3.68 0.206 45.5     3.26     4.09
+ Deep             2.19 0.205 44.6     1.78     2.61
+
+Degrees-of-freedom method: kenward-roger 
+Confidence level used: 0.95 
+
+Pairwise Contrasts:
+Population = Sagwon:
+ Treatment Name_pairwise estimate    SE   df t.ratio p.value
+ Wet - Dry                  1.157 0.290 44.6   3.988  0.0002
+ Wet - Deep                 2.238 0.290 44.6   7.715  <.0001
+ Dry - Deep                 1.081 0.290 44.6   3.727  0.0005
+
+Population = Toolik:
+ Treatment Name_pairwise estimate    SE   df t.ratio p.value
+ Wet - Dry                  0.934 0.292 45.9   3.197  0.0025
+ Wet - Deep                 2.656 0.290 44.6   9.158  <.0001
+ Dry - Deep                 1.722 0.292 45.9   5.892  <.0001
+
+Population = Coldfoot:
+ Treatment Name_pairwise estimate    SE   df t.ratio p.value
+ Wet - Dry                  1.116 0.291 45.0   3.839  0.0004
+ Wet - Deep                 2.600 0.290 44.6   8.963  <.0001
+ Dry - Deep                 1.484 0.291 45.0   5.103  <.0001
+
+Degrees-of-freedom method: kenward-roger 

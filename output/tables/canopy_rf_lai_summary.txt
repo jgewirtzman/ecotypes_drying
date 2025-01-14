@@ -1,0 +1,16 @@
+Random Forest Model Summary:
+
+Call:
+ randomForest(formula = as.formula(paste(metric, "~ .")), data = rf_data,      importance = TRUE, ntree = 10000) 
+               Type of random forest: regression
+                     Number of trees: 10000
+No. of variables tried at each split: 1
+
+          Mean of squared residuals: 1.989682
+                    % Var explained: 40.36
+
+Variable Importance:
+             %IncMSE IncNodePurity
+Population  99.90599      65.58869
+Treatment  189.11881     173.70261
+DOY        158.13699     221.52159

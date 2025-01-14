@@ -1,0 +1,2 @@
+"Script","Status","Time_Seconds","Error"
+"02_phenology.R","Failed",8.4,"`data` must either be a `gt_tbl` or a `gt_group`, not a string."

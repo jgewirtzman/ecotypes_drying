@@ -1,0 +1,37 @@
+d13C Model Summary:
+
+Call:
+lm(formula = d13C ~ Population * `Treatment Name`, data = d13c)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.2667 -0.4633  0.0800  0.4783  1.1167 
+
+Coefficients:
+                                         Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                             -26.77333    0.46514 -57.559   <2e-16 ***
+PopulationToolik                         -0.30000    0.65781  -0.456    0.654    
+PopulationColdfoot                        0.87667    0.65781   1.333    0.199    
+`Treatment Name`Dry                      -0.05667    0.65781  -0.086    0.932    
+`Treatment Name`Deep                     -0.11000    0.65781  -0.167    0.869    
+PopulationToolik:`Treatment Name`Dry      0.77000    0.93029   0.828    0.419    
+PopulationColdfoot:`Treatment Name`Dry   -0.10000    0.93029  -0.107    0.916    
+PopulationToolik:`Treatment Name`Deep     0.26333    0.93029   0.283    0.780    
+PopulationColdfoot:`Treatment Name`Deep  -0.64667    0.93029  -0.695    0.496    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.8057 on 18 degrees of freedom
+Multiple R-squared:  0.2565,	Adjusted R-squared:  -0.07397 
+F-statistic: 0.7762 on 8 and 18 DF,  p-value: 0.6286
+
+
+ANOVA Results:
+Analysis of Variance Table
+
+Response: d13C
+                            Df  Sum Sq Mean Sq F value Pr(>F)
+Population                   2  2.2091 1.10454  1.7017 0.2104
+`Treatment Name`             2  0.7437 0.37184  0.5729 0.5739
+Population:`Treatment Name`  4  1.0775 0.26938  0.4150 0.7956
+Residuals                   18 11.6834 0.64908               
