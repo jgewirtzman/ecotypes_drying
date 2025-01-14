@@ -1,4 +1,4 @@
-# Arctic Tundra Grass Water Response Analysis
+# Ecotypes drying experiment
 
 Analysis code and data for examining Eriophorum vaginatum tussock responses to experimental water treatments across a latitudinal gradient in northern Alaska.
 
