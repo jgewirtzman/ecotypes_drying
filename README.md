@@ -4,7 +4,7 @@ Analysis code and data for examining Eriophorum vaginatum tussock responses to e
 
 ## Project Overview
 
-This repository contains the analysis code for a study examining how Arctic tundra grasses respond to different soil moisture conditions. The experiment collected tussocks from three sites along a latitudinal gradient (Sagwon, Toolik Lake, and Coldfoot) and subjected them to three water treatments (Wet, Dry, and Deep) in a common garden experiment.
+This repository contains the analysis code for a study examining how Arctic tundra plants respond to different soil moisture conditions. The experiment collected tussocks from three sites along a latitudinal gradient (Sagwon, Toolik Lake, and Coldfoot) and subjected them to three water treatments (Wet, Dry, and Deep) in a common garden experiment.
 
 ### Measurements analyzed:
 - Soil moisture dynamics
