@@ -1,7 +1,3 @@
-# About (for GitHub repository description)
-Analysis of Arctic tundra grass responses to experimental water treatments, examining physiological and growth responses across a latitudinal gradient.
-
-# README.md
 # Arctic Tundra Grass Water Response Analysis
 
 Analysis code and data for examining Eriophorum vaginatum tussock responses to experimental water treatments across a latitudinal gradient in northern Alaska.
