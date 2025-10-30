@@ -65,62 +65,34 @@ Random effects:
 Number of obs: 375, groups:  Tag, 54
 
 Fixed effects:
-                                                 Estimate Std. Error         df t value Pr(>|t|)
-(Intercept)                                      0.554286   0.027818  44.906509  19.925  < 2e-16
-poly(DOY, 2)1                                   -1.063355   0.170716 302.990021  -6.229 1.57e-09
-poly(DOY, 2)2                                   -1.455914   0.170716 302.990021  -8.528 7.18e-16
-TreatmentDry                                    -0.039286   0.039341  44.906509  -0.999 0.323336
-TreatmentDeep                                   -0.129048   0.039341  44.906509  -3.280 0.002009
-PopulationToolik                                -0.008333   0.039341  44.906509  -0.212 0.833202
-PopulationColdfoot                              -0.060238   0.039341  44.906509  -1.531 0.132736
-poly(DOY, 2)1:TreatmentDry                       0.612723   0.241429 302.990021   2.538 0.011653
-poly(DOY, 2)2:TreatmentDry                       0.052325   0.241429 302.990021   0.217 0.828566
-poly(DOY, 2)1:TreatmentDeep                      1.252118   0.241429 302.990021   5.186 3.93e-07
-poly(DOY, 2)2:TreatmentDeep                      0.576589   0.241429 302.990021   2.388 0.017542
-poly(DOY, 2)1:PopulationToolik                   0.257818   0.241429 302.990021   1.068 0.286423
-poly(DOY, 2)2:PopulationToolik                  -0.044529   0.241429 302.990021  -0.184 0.853791
-poly(DOY, 2)1:PopulationColdfoot                 0.475209   0.241429 302.990021   1.968 0.049943
-poly(DOY, 2)2:PopulationColdfoot                 0.824858   0.241429 302.990021   3.417 0.000721
-TreatmentDry:PopulationToolik                   -0.027668   0.055699  45.109438  -0.497 0.621786
-TreatmentDeep:PopulationToolik                   0.033571   0.055636  44.906509   0.603 0.549270
-TreatmentDry:PopulationColdfoot                  0.009762   0.055636  44.906509   0.175 0.861507
-TreatmentDeep:PopulationColdfoot                -0.003095   0.055636  44.906509  -0.056 0.955880
-poly(DOY, 2)1:TreatmentDry:PopulationToolik      0.067714   0.345941 303.133116   0.196 0.844946
-poly(DOY, 2)2:TreatmentDry:PopulationToolik      0.416510   0.341435 302.990126   1.220 0.223460
-poly(DOY, 2)1:TreatmentDeep:PopulationToolik    -0.236208   0.341432 302.990021  -0.692 0.489583
-poly(DOY, 2)2:TreatmentDeep:PopulationToolik     0.064451   0.341432 302.990021   0.189 0.850403
-poly(DOY, 2)1:TreatmentDry:PopulationColdfoot   -0.349808   0.341432 302.990021  -1.025 0.306401
-poly(DOY, 2)2:TreatmentDry:PopulationColdfoot   -0.137816   0.341432 302.990021  -0.404 0.686761
-poly(DOY, 2)1:TreatmentDeep:PopulationColdfoot  -0.470566   0.341432 302.990021  -1.378 0.169155
-poly(DOY, 2)2:TreatmentDeep:PopulationColdfoot  -0.174463   0.341432 302.990021  -0.511 0.609741
-                                                  
-(Intercept)                                    ***
-poly(DOY, 2)1                                  ***
-poly(DOY, 2)2                                  ***
-TreatmentDry                                      
-TreatmentDeep                                  ** 
-PopulationToolik                                  
-PopulationColdfoot                                
-poly(DOY, 2)1:TreatmentDry                     *  
-poly(DOY, 2)2:TreatmentDry                        
-poly(DOY, 2)1:TreatmentDeep                    ***
-poly(DOY, 2)2:TreatmentDeep                    *  
-poly(DOY, 2)1:PopulationToolik                    
-poly(DOY, 2)2:PopulationToolik                    
-poly(DOY, 2)1:PopulationColdfoot               *  
-poly(DOY, 2)2:PopulationColdfoot               ***
-TreatmentDry:PopulationToolik                     
-TreatmentDeep:PopulationToolik                    
-TreatmentDry:PopulationColdfoot                   
-TreatmentDeep:PopulationColdfoot                  
-poly(DOY, 2)1:TreatmentDry:PopulationToolik       
-poly(DOY, 2)2:TreatmentDry:PopulationToolik       
-poly(DOY, 2)1:TreatmentDeep:PopulationToolik      
-poly(DOY, 2)2:TreatmentDeep:PopulationToolik      
-poly(DOY, 2)1:TreatmentDry:PopulationColdfoot     
-poly(DOY, 2)2:TreatmentDry:PopulationColdfoot     
-poly(DOY, 2)1:TreatmentDeep:PopulationColdfoot    
-poly(DOY, 2)2:TreatmentDeep:PopulationColdfoot    
+                                                 Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                                      0.554286   0.027818  44.906509  19.925  < 2e-16 ***
+poly(DOY, 2)1                                   -1.063355   0.170716 302.990021  -6.229 1.57e-09 ***
+poly(DOY, 2)2                                   -1.455914   0.170716 302.990021  -8.528 7.18e-16 ***
+TreatmentDry                                    -0.039286   0.039341  44.906509  -0.999 0.323336    
+TreatmentDeep                                   -0.129048   0.039341  44.906509  -3.280 0.002009 ** 
+PopulationToolik                                -0.008333   0.039341  44.906509  -0.212 0.833202    
+PopulationColdfoot                              -0.060238   0.039341  44.906509  -1.531 0.132736    
+poly(DOY, 2)1:TreatmentDry                       0.612723   0.241429 302.990021   2.538 0.011653 *  
+poly(DOY, 2)2:TreatmentDry                       0.052325   0.241429 302.990021   0.217 0.828566    
+poly(DOY, 2)1:TreatmentDeep                      1.252118   0.241429 302.990021   5.186 3.93e-07 ***
+poly(DOY, 2)2:TreatmentDeep                      0.576589   0.241429 302.990021   2.388 0.017542 *  
+poly(DOY, 2)1:PopulationToolik                   0.257818   0.241429 302.990021   1.068 0.286423    
+poly(DOY, 2)2:PopulationToolik                  -0.044529   0.241429 302.990021  -0.184 0.853791    
+poly(DOY, 2)1:PopulationColdfoot                 0.475209   0.241429 302.990021   1.968 0.049943 *  
+poly(DOY, 2)2:PopulationColdfoot                 0.824858   0.241429 302.990021   3.417 0.000721 ***
+TreatmentDry:PopulationToolik                   -0.027668   0.055699  45.109438  -0.497 0.621786    
+TreatmentDeep:PopulationToolik                   0.033571   0.055636  44.906509   0.603 0.549270    
+TreatmentDry:PopulationColdfoot                  0.009762   0.055636  44.906509   0.175 0.861507    
+TreatmentDeep:PopulationColdfoot                -0.003095   0.055636  44.906509  -0.056 0.955880    
+poly(DOY, 2)1:TreatmentDry:PopulationToolik      0.067714   0.345941 303.133116   0.196 0.844946    
+poly(DOY, 2)2:TreatmentDry:PopulationToolik      0.416510   0.341435 302.990126   1.220 0.223460    
+poly(DOY, 2)1:TreatmentDeep:PopulationToolik    -0.236208   0.341432 302.990021  -0.692 0.489583    
+poly(DOY, 2)2:TreatmentDeep:PopulationToolik     0.064451   0.341432 302.990021   0.189 0.850403    
+poly(DOY, 2)1:TreatmentDry:PopulationColdfoot   -0.349808   0.341432 302.990021  -1.025 0.306401    
+poly(DOY, 2)2:TreatmentDry:PopulationColdfoot   -0.137816   0.341432 302.990021  -0.404 0.686761    
+poly(DOY, 2)1:TreatmentDeep:PopulationColdfoot  -0.470566   0.341432 302.990021  -1.378 0.169155    
+poly(DOY, 2)2:TreatmentDeep:PopulationColdfoot  -0.174463   0.341432 302.990021  -0.511 0.609741    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
@@ -142,62 +114,34 @@ Random effects:
 Number of obs: 375, groups:  Tag, 54
 
 Fixed effects:
-                                                Estimate Std. Error        df t value Pr(>|t|)
-(Intercept)                                      0.58293    0.06202  44.86963   9.399 3.60e-12
-poly(DOY, 2)1                                   -2.18969    0.47137 302.99670  -4.645 5.07e-06
-poly(DOY, 2)2                                   -3.88877    0.47137 302.99670  -8.250 4.90e-15
-TreatmentDry                                    -0.11644    0.08771  44.86963  -1.328 0.191033
-TreatmentDeep                                   -0.31531    0.08771  44.86963  -3.595 0.000803
-PopulationToolik                                 0.00260    0.08771  44.86963   0.030 0.976483
-PopulationColdfoot                              -0.17624    0.08771  44.86963  -2.009 0.050548
-poly(DOY, 2)1:TreatmentDry                       1.52093    0.66662 302.99670   2.282 0.023208
-poly(DOY, 2)2:TreatmentDry                       0.58869    0.66662 302.99670   0.883 0.377879
-poly(DOY, 2)1:TreatmentDeep                      2.51224    0.66662 302.99670   3.769 0.000197
-poly(DOY, 2)2:TreatmentDeep                      2.49455    0.66662 302.99670   3.742 0.000218
-poly(DOY, 2)1:PopulationToolik                   0.69230    0.66662 302.99670   1.039 0.299854
-poly(DOY, 2)2:PopulationToolik                  -0.51100    0.66662 302.99670  -0.767 0.443942
-poly(DOY, 2)1:PopulationColdfoot                 1.22148    0.66662 302.99670   1.832 0.067880
-poly(DOY, 2)2:PopulationColdfoot                 2.72539    0.66662 302.99670   4.088 5.57e-05
-TreatmentDry:PopulationToolik                   -0.07871    0.12426  45.17777  -0.633 0.529615
-TreatmentDeep:PopulationToolik                   0.05196    0.12404  44.86963   0.419 0.677328
-TreatmentDry:PopulationColdfoot                  0.04892    0.12404  44.86963   0.394 0.695171
-TreatmentDeep:PopulationColdfoot                 0.10163    0.12404  44.86963   0.819 0.416955
-poly(DOY, 2)1:TreatmentDry:PopulationToolik      0.03428    0.95513 303.21410   0.036 0.971391
-poly(DOY, 2)2:TreatmentDry:PopulationToolik      1.44145    0.94275 302.99686   1.529 0.127309
-poly(DOY, 2)1:TreatmentDeep:PopulationToolik    -0.49139    0.94274 302.99670  -0.521 0.602583
-poly(DOY, 2)2:TreatmentDeep:PopulationToolik     0.17487    0.94274 302.99670   0.185 0.852967
-poly(DOY, 2)1:TreatmentDry:PopulationColdfoot   -1.05733    0.94274 302.99670  -1.122 0.262941
-poly(DOY, 2)2:TreatmentDry:PopulationColdfoot   -0.68552    0.94274 302.99670  -0.727 0.467689
-poly(DOY, 2)1:TreatmentDeep:PopulationColdfoot  -1.22945    0.94274 302.99670  -1.304 0.193178
-poly(DOY, 2)2:TreatmentDeep:PopulationColdfoot  -1.65626    0.94274 302.99670  -1.757 0.079952
-                                                  
-(Intercept)                                    ***
-poly(DOY, 2)1                                  ***
-poly(DOY, 2)2                                  ***
-TreatmentDry                                      
-TreatmentDeep                                  ***
-PopulationToolik                                  
-PopulationColdfoot                             .  
-poly(DOY, 2)1:TreatmentDry                     *  
-poly(DOY, 2)2:TreatmentDry                        
-poly(DOY, 2)1:TreatmentDeep                    ***
-poly(DOY, 2)2:TreatmentDeep                    ***
-poly(DOY, 2)1:PopulationToolik                    
-poly(DOY, 2)2:PopulationToolik                    
-poly(DOY, 2)1:PopulationColdfoot               .  
-poly(DOY, 2)2:PopulationColdfoot               ***
-TreatmentDry:PopulationToolik                     
-TreatmentDeep:PopulationToolik                    
-TreatmentDry:PopulationColdfoot                   
-TreatmentDeep:PopulationColdfoot                  
-poly(DOY, 2)1:TreatmentDry:PopulationToolik       
-poly(DOY, 2)2:TreatmentDry:PopulationToolik       
-poly(DOY, 2)1:TreatmentDeep:PopulationToolik      
-poly(DOY, 2)2:TreatmentDeep:PopulationToolik      
-poly(DOY, 2)1:TreatmentDry:PopulationColdfoot     
-poly(DOY, 2)2:TreatmentDry:PopulationColdfoot     
-poly(DOY, 2)1:TreatmentDeep:PopulationColdfoot    
-poly(DOY, 2)2:TreatmentDeep:PopulationColdfoot .  
+                                                Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)                                      0.58293    0.06202  44.86963   9.399 3.60e-12 ***
+poly(DOY, 2)1                                   -2.18969    0.47137 302.99670  -4.645 5.07e-06 ***
+poly(DOY, 2)2                                   -3.88877    0.47137 302.99670  -8.250 4.90e-15 ***
+TreatmentDry                                    -0.11644    0.08771  44.86963  -1.328 0.191033    
+TreatmentDeep                                   -0.31531    0.08771  44.86963  -3.595 0.000803 ***
+PopulationToolik                                 0.00260    0.08771  44.86963   0.030 0.976483    
+PopulationColdfoot                              -0.17624    0.08771  44.86963  -2.009 0.050548 .  
+poly(DOY, 2)1:TreatmentDry                       1.52093    0.66662 302.99670   2.282 0.023208 *  
+poly(DOY, 2)2:TreatmentDry                       0.58869    0.66662 302.99670   0.883 0.377879    
+poly(DOY, 2)1:TreatmentDeep                      2.51224    0.66662 302.99670   3.769 0.000197 ***
+poly(DOY, 2)2:TreatmentDeep                      2.49455    0.66662 302.99670   3.742 0.000218 ***
+poly(DOY, 2)1:PopulationToolik                   0.69230    0.66662 302.99670   1.039 0.299854    
+poly(DOY, 2)2:PopulationToolik                  -0.51100    0.66662 302.99670  -0.767 0.443942    
+poly(DOY, 2)1:PopulationColdfoot                 1.22148    0.66662 302.99670   1.832 0.067880 .  
+poly(DOY, 2)2:PopulationColdfoot                 2.72539    0.66662 302.99670   4.088 5.57e-05 ***
+TreatmentDry:PopulationToolik                   -0.07871    0.12426  45.17777  -0.633 0.529615    
+TreatmentDeep:PopulationToolik                   0.05196    0.12404  44.86963   0.419 0.677328    
+TreatmentDry:PopulationColdfoot                  0.04892    0.12404  44.86963   0.394 0.695171    
+TreatmentDeep:PopulationColdfoot                 0.10163    0.12404  44.86963   0.819 0.416955    
+poly(DOY, 2)1:TreatmentDry:PopulationToolik      0.03428    0.95513 303.21410   0.036 0.971391    
+poly(DOY, 2)2:TreatmentDry:PopulationToolik      1.44145    0.94275 302.99686   1.529 0.127309    
+poly(DOY, 2)1:TreatmentDeep:PopulationToolik    -0.49139    0.94274 302.99670  -0.521 0.602583    
+poly(DOY, 2)2:TreatmentDeep:PopulationToolik     0.17487    0.94274 302.99670   0.185 0.852967    
+poly(DOY, 2)1:TreatmentDry:PopulationColdfoot   -1.05733    0.94274 302.99670  -1.122 0.262941    
+poly(DOY, 2)2:TreatmentDry:PopulationColdfoot   -0.68552    0.94274 302.99670  -0.727 0.467689    
+poly(DOY, 2)1:TreatmentDeep:PopulationColdfoot  -1.22945    0.94274 302.99670  -1.304 0.193178    
+poly(DOY, 2)2:TreatmentDeep:PopulationColdfoot  -1.65626    0.94274 302.99670  -1.757 0.079952 .  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 

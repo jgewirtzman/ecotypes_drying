@@ -1,0 +1,36 @@
+Full Model ANOVA:
+Analysis of Variance Table
+
+Response: lai_auc
+                                    Df Sum Sq Mean Sq F value  Pr(>F)   
+gwc_auc                              1  43115   43115 10.3569 0.00273 **
+Population                           2  41881   20940  5.0302 0.01185 * 
+`Treatment Name`                     2  39821   19910  4.7828 0.01439 * 
+gwc_auc:Population                   2   3426    1713  0.4115 0.66572   
+gwc_auc:`Treatment Name`             2  13537    6768  1.6259 0.21085   
+Population:`Treatment Name`          4   4745    1186  0.2850 0.88581   
+gwc_auc:Population:`Treatment Name`  4  10423    2606  0.6260 0.64705   
+Residuals                           36 149864    4163                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Simple Model Summary:
+
+Call:
+lm(formula = lai_auc ~ gwc_auc, data = lai_gwc_merged)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-92.94 -47.00 -12.00  34.06 216.61 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept) -116.333     77.323  -1.505  0.13850   
+gwc_auc        5.362      1.839   2.916  0.00522 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 71.21 on 52 degrees of freedom
+Multiple R-squared:  0.1405,	Adjusted R-squared:  0.124 
+F-statistic: 8.502 on 1 and 52 DF,  p-value: 0.005224
+

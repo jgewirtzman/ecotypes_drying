@@ -1,0 +1,769 @@
+NDVI MODELS
+Full Model ANOVA (NDVI ~ GWC * Population * Treatment):
+Analysis of Variance Table
+
+Response: ndvi_auc
+                                    Df Sum Sq Mean Sq F value    Pr(>F)    
+gwc_auc                              1 233.99 233.987 14.0449 0.0006252 ***
+Population                           2 189.57  94.783  5.6893 0.0071280 ** 
+`Treatment Name`                     2 144.34  72.170  4.3319 0.0206172 *  
+gwc_auc:Population                   2  23.74  11.872  0.7126 0.4971590    
+gwc_auc:`Tindexed 3.00B in  0s, 967.92kB/s                                                                                                                            indexed 1.00TB in  0s, 3.41PB/s                                                                                                                            indexed 3.00B in  0s, 1.57MB/sindexed 1.00TB in  0s, 3.50PB/s                                                                                                                            indexed 3.00B in  0s, 599.19kB/s                                                                                                                            indexed 1.00TB in  0s, 2.73PB/s                                                                                                                            indexed 3.00B in  0s, 967.92kB/s                                                                                                                            indexed 1.00TB in  0s, 3.36PB/s                                                                                                                            NDVI MODELS
+Full Model ANOVA (NDVI ~ GWC * Population * Treatment):
+Analysis of Variance Table
+
+Response: ndvi_auc
+                                    Df Sum Sq Mean Sq F value    Pr(>F)    
+gwc_auc                              1 233.99 233.987 14.0449 0.0006252 ***
+Population                           2 189.57  94.783  5.6893 0.0071280 ** 
+`Treatment Name`                     2 144.34  72.170  4.3319 0.0206172 *  
+gwc_auc:Population                   2  23.74  11.872  0.7126 0.4971590    
+gwc_auc:`Treatment Name`             2  51.91  25.953  1.5578 0.2244598    
+Population:`Treatment Name`          4  16.45   4.112  0.2468 0.9096988    
+gwc_auc:Population:`Treatment Name`  4  41.67  10.418  0.6253 0.6474808    
+Residuals                           36 599.76  16.660                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc * Population * `Treatment Name`, 
+    data = productivity_merged)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-7.995 -2.463 -0.258  1.851  7.360 
+
+Coefficients:
+                                                  Estimate Std. Error t value Pr(>|t|)
+(Intercept)                                       47.40483  101.41876   0.467    0.643
+gwc_auc                                           -0.34101    2.22477  -0.153    0.879
+PopulationToolik                                 121.13415  126.44130   0.958    0.344
+PopulationColdfoot                                30.48834  150.35395   0.203    0.840
+`Treatment Name`Dry                               -1.47725  103.20304  -0.014    0.989
+`Treatment Name`Deep                             -36.46255  102.32865  -0.356    0.724
+gwc_auc:PopulationToolik                          -2.62255    2.75988  -0.950    0.348
+gwc_auc:PopulationColdfoot                        -0.71977    3.25096  -0.221    0.826
+gwc_auc:`Treatment Name`Dry                       -0.05082    2.27220  -0.022    0.982
+gwc_auc:`Treatment Name`Deep                       0.72630    2.25744   0.322    0.750
+PopulationToolik:`Treatment Name`Dry            -165.77846  147.65318  -1.123    0.269
+PopulationColdfoot:`Treatment Name`Dry          -100.41468  165.42150  -0.607    0.548
+PopulationToolik:`Treatment Name`Deep           -103.43007  128.04337  -0.808    0.425
+PopulationColdfoot:`Treatment Name`Deep          -22.90830  151.79645  -0.151    0.881
+gwc_auc:PopulationToolik:`Treatment Name`Dry       3.60513    3.25484   1.108    0.275
+gwc_auc:PopulationColdfoot:`Treatment Name`Dry     2.26125    3.61227   0.626    0.535
+gwc_auc:PopulationToolik:`Treatment Name`Deep      2.16211    2.81799   0.767    0.448
+gwc_auc:PopulationColdfoot:`Treatment Name`Deep    0.39149    3.30131   0.119    0.906
+
+Residual standard error: 4.082 on 36 degrees of freedom
+Multiple R-squared:  0.5392,	Adjusted R-squared:  0.3215 
+F-statistic: 2.477 on 17 and 36 DF,  p-value: 0.01091
+
+Simple Model (NDVI ~ GWC):
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.4509 -2.6536  0.0085  2.9002  7.9386 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept)   10.933      4.920   2.222   0.0306 * 
+gwc_auc        0.395      0.117   3.376   0.0014 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.531 on 52 degrees of freedom
+Multiple R-squared:  0.1798,	Adjusted R-squared:  0.164 
+F-statistic:  11.4 on 1 and 52 DF,  p-value: 0.001397
+
+Population Model ANOVA (NDVI ~ GWC * Population):
+Analysis of Variance Table
+
+Response: ndvi_auc
+                   Df Sum Sq Mean Sq F value    Pr(>F)    
+gwc_auc             1 233.99 233.987 13.2145 0.0006759 ***
+Population          2 189.57  94.783  5.3529 0.0079697 ** 
+gwc_auc:Population  2  27.94  13.969  0.7889 0.4601420    
+Residuals          48 849.93  17.707                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc * Population, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.8724 -2.6893 -0.3428  3.0973  8.1507 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)  
+(Intercept)                  9.5467     7.6220   1.253   0.2164  
+gwc_auc                      0.4713     0.1857   2.538   0.0144 *
+PopulationToolik             7.4318    10.8585   0.684   0.4970  
+PopulationColdfoot         -10.3644    11.5861  -0.895   0.3755  
+gwc_auc:PopulationToolik    -0.1999     0.2607  -0.767   0.4470  
+gwc_auc:PopulationColdfoot   0.1393     0.2757   0.505   0.6157  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.208 on 48 degrees of freedom
+Multiple R-squared:  0.3469,	Adjusted R-squared:  0.2789 
+F-statistic:   5.1 on 5 and 48 DF,  p-value: 0.0007893
+
+Treatment Model ANOVA (NDVI ~ GWC * Treatment):
+Analysis of Variance Table
+
+Response: ndvi_auc
+                         Df Sum Sq Mean Sq F value    Pr(>F)    
+gwc_auc                   1 233.99 233.987 14.4429 0.0004073 ***
+`Treatment Name`          2 205.21 102.603  6.3332 0.0036227 ** 
+gwc_auc:`Treatment Name`  2  84.58  42.292  2.6105 0.0839075 .  
+Residuals                48 777.64  16.201                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc * `Treatment Name`, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.3930 -2.9620  0.5468  2.4422  8.6419 
+
+Coefficients:
+                              Estimate Std. Error t value Pr(>|t|)   
+(Intercept)                   127.8095    44.8665   2.849  0.00645 **
+gwc_auc                        -2.1049     0.9708  -2.168  0.03513 * 
+`Treatment Name`Dry           -82.8798    47.4440  -1.747  0.08705 . 
+`Treatment Name`Deep         -105.6159    45.6200  -2.315  0.02493 * 
+gwc_auc:`Treatment Name`Dry     1.7121     1.0341   1.656  0.10431   
+gwc_auc:`Treatment Name`Deep    2.1477     0.9975   2.153  0.03637 * 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.025 on 48 degrees of freedom
+Multiple R-squared:  0.4025,	Adjusted R-squared:  0.3402 
+F-statistic: 6.466 on 5 and 48 DF,  p-value: 0.0001142
+
+LAI MODELS
+Full Model ANOVA (LAI ~ GWC * Population * Treatment):
+Analysis of Variance Table
+
+Response: lai_auc
+                                    Df Sum Sq Mean Sq F value  Pr(>F)   
+gwc_auc                              1  43115   43115 10.3569 0.00273 **
+Population                           2  41881   20940  5.0302 0.01185 * 
+`Treatment Name`                     2  39821   19910  4.7828 0.01439 * 
+gwc_auc:Population                   2   3426    1713  0.4115 0.66572   
+gwc_auc:`Treatment Name`             2  13537    6768  1.6259 0.21085   
+Population:`Treatment Name`          4   4745    1186  0.2850 0.88581   
+gwc_auc:Population:`Treatment Name`  4  10423    2606  0.6260 0.64705   
+Residuals                           36 149864    4163                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = lai_auc ~ gwc_auc * Population * `Treatment Name`, 
+    data = productivity_merged)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-111.725  -21.753   -7.586   18.142  179.899 
+
+Coefficients:
+                                                 Estimate Std. Error t value Pr(>|t|)
+(Intercept)                                      -161.976   1603.171  -0.101    0.920
+gwc_auc                                             7.496     35.168   0.213    0.832
+PopulationToolik                                 2835.702   1998.713   1.419    0.165
+PopulationColdfoot                               1097.102   2376.711   0.462    0.647
+`Treatment Name`Dry                               497.397   1631.376   0.305    0.762
+`Treatment Name`Deep                              109.691   1617.554   0.068    0.946
+gwc_auc:PopulationToolik                          -61.193     43.627  -1.403    0.169
+gwc_auc:PopulationColdfoot                        -25.260     51.389  -0.492    0.626
+gwc_auc:`Treatment Name`Dry                       -12.394     35.918  -0.345    0.732
+gwc_auc:`Treatment Name`Deep                       -4.372     35.684  -0.123    0.903
+PopulationToolik:`Treatment Name`Dry            -2888.579   2334.019  -1.238    0.224
+PopulationColdfoot:`Treatment Name`Dry          -1909.456   2614.891  -0.730    0.470
+PopulationToolik:`Treatment Name`Deep           -2682.470   2024.038  -1.325    0.193
+PopulationColdfoot:`Treatment Name`Deep          -982.152   2399.513  -0.409    0.685
+gwc_auc:PopulationToolik:`Treatment Name`Dry       62.105     51.451   1.207    0.235
+gwc_auc:PopulationColdfoot:`Treatment Name`Dry     42.795     57.101   0.749    0.458
+gwc_auc:PopulationToolik:`Treatment Name`Deep      57.461     44.545   1.290    0.205
+gwc_auc:PopulationColdfoot:`Treatment Name`Deep    21.389     52.185   0.410    0.684
+
+Residual standard error: 64.52 on 36 degrees of freedom
+Multiple R-squared:  0.5115,	Adjusted R-squared:  0.2809 
+F-statistic: 2.218 on 17 and 36 DF,  p-value: 0.02201
+
+Simple Model (LAI ~ GWC):
+
+Call:
+lm(formula = lai_auc ~ gwc_auc, data = productivity_merged)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-92.94 -47.00 -12.00  34.06 216.61 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept) -116.333     77.323  -1.505  0.13850   
+gwc_auc        5.362      1.839   2.916  0.00522 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 71.21 on 52 degrees of freedom
+Multiple R-squared:  0.1405,	Adjusted R-squared:  0.124 
+F-statistic: 8.502 on 1 and 52 DF,  p-value: 0.005224
+
+Population Model ANOVA (LAI ~ GWC * Population):
+Analysis of Variance Table
+
+Response: lai_auc
+                   Df Sum Sq Mean Sq F value   Pr(>F)   
+gwc_auc             1  43115   43115  9.3973 0.003562 **
+Population          2  41881   20940  4.5641 0.015324 * 
+gwc_auc:Population  2   1592     796  0.1735 0.841260   
+Residuals          48 220224    4588                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = lai_auc ~ gwc_auc * Population, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-110.42  -41.01  -15.35   25.11  199.19 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)  
+(Intercept)                -176.464    122.691  -1.438   0.1568  
+gwc_auc                       7.376      2.989   2.468   0.0172 *
+PopulationToolik             75.139    174.788   0.430   0.6692  
+PopulationColdfoot           37.098    186.500   0.199   0.8432  
+gwc_auc:PopulationToolik     -1.962      4.196  -0.468   0.6421  
+gwc_auc:PopulationColdfoot   -2.390      4.439  -0.539   0.5927  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 67.73 on 48 degrees of freedom
+Multiple R-squared:  0.2822,	Adjusted R-squared:  0.2074 
+F-statistic: 3.775 on 5 and 48 DF,  p-value: 0.005805
+
+Treatment Model ANOVA (LAI ~ GWC * Treatment):
+Analysis of Variance Table
+
+Response: lai_auc
+                         Df Sum Sq Mean Sq F value   Pr(>F)   
+gwc_auc                   1  43115   43115 11.0727 0.001687 **
+`Treatment Name`          2  52441   26220  6.7339 0.002644 **
+gwc_auc:`Treatment Name`  2  24353   12176  3.1271 0.052892 . 
+Residuals                48 186903    3894                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = lai_auc ~ gwc_auc * `Treatment Name`, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-84.978 -36.970  -1.805  26.317 207.381 
+
+Coefficients:
+                             Estimate Std. Error t value Pr(>|t|)   
+(Intercept)                   1883.87     695.57   2.708  0.00934 **
+gwc_auc                        -37.34      15.05  -2.481  0.01664 * 
+`Treatment Name`Dry          -1515.33     735.53  -2.060  0.04482 * 
+`Treatment Name`Deep         -1828.29     707.25  -2.585  0.01283 * 
+gwc_auc:`Treatment Name`Dry     31.27      16.03   1.951  0.05696 . 
+gwc_auc:`Treatment Name`Deep    37.40      15.46   2.418  0.01943 * 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 62.4 on 48 degrees of freedom
+Multiple R-squared:  0.3908,	Adjusted R-squared:  0.3274 
+F-statistic: 6.159 on 5 and 48 DF,  p-value: 0.0001744
+
+MODEL COMPARISONS
+Comparing R-squared values:
+NDVI Simple Model R²: 0.179794 
+LAI Simple Model R²: 0.1405256 
+NDVI Population Model R²: 0.3469224 
+LAI Population Model R²: 0.2822167 
+NDVI Treatment Model R²: 0.4024669 
+LAI Treatment Model R²: 0.3908211 
+NDVI Full Model R²: 0.5391517 
+LAI Full Model R²: 0.5115433 
+
+Overall Correlations:
+# A tibble: 1 × 4
+  ndvi_gwc_cor lai_gwc_cor ndvi_lai_cor     n
+         <dbl>       <dbl>        <dbl> <int>
+1        0.424       0.375        0.916    54
+
+Correlations by Population:
+# A tibble: 3 × 5
+  Population ndvi_gwc_cor lai_gwc_cor ndvi_lai_cor     n
+  <fct>             <dbl>       <dbl>        <dbl> <int>
+1 Sagwon            0.615       0.571        0.947    18
+2 Toolik            0.296       0.331        0.933    18
+3 Coldfoot          0.618       0.473        0.900    18
+
+Correlations by Treatment:
+# A tibble: 3 × 5
+  `Treatment Name` ndvi_gwc_cor lai_gwc_cor ndvi_lai_cor     n
+  <fct>                   <dbl>       <dbl>        <dbl> <int>
+1 Wet                   -0.505     -0.403          0.970    18
+2 Dry                   -0.264     -0.319          0.937    18
+3 Deep                   0.0439     0.00675        0.915    18
+
+Slope Comparison by Population:
+  Population NDVI_slope LAI_slope
+1   Coldfoot  0.4712851  7.376246
+2     Toolik  0.2714075  5.413918
+3     Sagwon         NA        NA
+
+✓ Productivity comparison analysis complete!
+  - Models fitted and compared
+  - Correlations calculated
+  - Plots saved
+  - Summary tables saved
+indexed 3.00B in  0s, 967.92kB/s                                                                                                                            indexed 1.00TB in  0s, 2.87PB/s                                                                                                                            indexed 3.00B in  0s, 967.92kB/s                                                                                                                            indexed 1.00TB in  0s, 3.19PB/s                                                                                                                            ================================================================================ 
+NDVI MODELS
+================================================================================ 
+
+Full Model ANOVA (NDVI ~ GWC * Population * Treatment):
+Analysis of Variance Table
+
+Response: ndvi_auc
+                                    Df Sum Sq Mean Sq F value    Pr(>F)    
+gwc_auc                              1 233.99 233.987 14.0449 0.0006252 ***
+Population                           2 189.57  94.783  5.6893 0.0071280 ** 
+`Treatment Name`                     2 144.34  72.170  4.3319 0.0206172 *  
+gwc_auc:Population                   2  23.74  11.872  0.7126 0.4971590    
+gwc_auc:`Treatment Name`             2  51.91  25.953  1.5578 0.2244598    
+Population:`Treatment Name`          4  16.45   4.112  0.2468 0.9096988    
+gwc_auc:Population:`Treatment Name`  4  41.67  10.418  0.6253 0.6474808    
+Residuals                           36 599.76  16.660                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc * Population * `Treatment Name`, 
+    data = productivity_merged)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-7.995 -2.463 -0.258  1.851  7.360 
+
+Coefficients:
+                                                  Estimate Std. Error t value Pr(>|t|)
+(Intercept)                                       47.40483  101.41876   0.467    0.643
+gwc_auc                                           -0.34101    2.22477  -0.153    0.879
+PopulationToolik                                 121.13415  126.44130   0.958    0.344
+PopulationColdfoot                                30.48834  150.35395   0.203    0.840
+`Treatment Name`Dry                               -1.47725  103.20304  -0.014    0.989
+`Treatment Name`Deep                             -36.46255  102.32865  -0.356    0.724
+gwc_auc:PopulationToolik                          -2.62255    2.75988  -0.950    0.348
+gwc_auc:PopulationColdfoot                        -0.71977    3.25096  -0.221    0.826
+gwc_auc:`Treatment Name`Dry                       -0.05082    2.27220  -0.022    0.982
+gwc_auc:`Treatment Name`Deep                       0.72630    2.25744   0.322    0.750
+PopulationToolik:`Treatment Name`Dry            -165.77846  147.65318  -1.123    0.269
+PopulationColdfoot:`Treatment Name`Dry          -100.41468  165.42150  -0.607    0.548
+PopulationToolik:`Treatment Name`Deep           -103.43007  128.04337  -0.808    0.425
+PopulationColdfoot:`Treatment Name`Deep          -22.90830  151.79645  -0.151    0.881
+gwc_auc:PopulationToolik:`Treatment Name`Dry       3.60513    3.25484   1.108    0.275
+gwc_auc:PopulationColdfoot:`Treatment Name`Dry     2.26125    3.61227   0.626    0.535
+gwc_auc:PopulationToolik:`Treatment Name`Deep      2.16211    2.81799   0.767    0.448
+gwc_auc:PopulationColdfoot:`Treatment Name`Deep    0.39149    3.30131   0.119    0.906
+
+Residual standard error: 4.082 on 36 degrees of freedom
+Multiple R-squared:  0.5392,	Adjusted R-squared:  0.3215 
+F-statistic: 2.477 on 17 and 36 DF,  p-value: 0.01091
+
+
+ ================================================================================ 
+Simple Model (NDVI ~ GWC):
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.4509 -2.6536  0.0085  2.9002  7.9386 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept)   10.933      4.920   2.222   0.0306 * 
+gwc_auc        0.395      0.117   3.376   0.0014 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.531 on 52 degrees of freedom
+Multiple R-squared:  0.1798,	Adjusted R-squared:  0.164 
+F-statistic:  11.4 on 1 and 52 DF,  p-value: 0.001397
+
+
+ ================================================================================ 
+Population Model ANOVA (NDVI ~ GWC * Population):
+Analysis of Variance Table
+
+Response: ndvi_auc
+                   Df Sum Sq Mean Sq F value    Pr(>F)    
+gwc_auc             1 233.99 233.987 13.2145 0.0006759 ***
+Population          2 189.57  94.783  5.3529 0.0079697 ** 
+gwc_auc:Population  2  27.94  13.969  0.7889 0.4601420    
+Residuals          48 849.93  17.707                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc * Population, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.8724 -2.6893 -0.3428  3.0973  8.1507 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)  
+(Intercept)                  9.5467     7.6220   1.253   0.2164  
+gwc_auc                      0.4713     0.1857   2.538   0.0144 *
+PopulationToolik             7.4318    10.8585   0.684   0.4970  
+PopulationColdfoot         -10.3644    11.5861  -0.895   0.3755  
+gwc_auc:PopulationToolik    -0.1999     0.2607  -0.767   0.4470  
+gwc_auc:PopulationColdfoot   0.1393     0.2757   0.505   0.6157  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.208 on 48 degrees of freedom
+Multiple R-squared:  0.3469,	Adjusted R-squared:  0.2789 
+F-statistic:   5.1 on 5 and 48 DF,  p-value: 0.0007893
+
+
+ ================================================================================ 
+Treatment Model ANOVA (NDVI ~ GWC * Treatment):
+Analysis of Variance Table
+
+Response: ndvi_auc
+                         Df Sum Sq Mean Sq F value    Pr(>F)    
+gwc_auc                   1 233.99 233.987 14.4429 0.0004073 ***
+`Treatment Name`          2 205.21 102.603  6.3332 0.0036227 ** 
+gwc_auc:`Treatment Name`  2  84.58  42.292  2.6105 0.0839075 .  
+Residuals                48 777.64  16.201                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc * `Treatment Name`, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.3930 -2.9620  0.5468  2.4422  8.6419 
+
+Coefficients:
+                              Estimate Std. Error t value Pr(>|t|)   
+(Intercept)                   127.8095    44.8665   2.849  0.00645 **
+gwc_auc                        -2.1049     0.9708  -2.168  0.03513 * 
+`Treatment Name`Dry           -82.8798    47.4440  -1.747  0.08705 . 
+`Treatment Name`Deep         -105.6159    45.6200  -2.315  0.02493 * 
+gwc_auc:`Treatment Name`Dry     1.7121     1.0341   1.656  0.10431   
+gwc_auc:`Treatment Name`Deep    2.1477     0.9975   2.153  0.03637 * 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.025 on 48 degrees of freedom
+Multiple R-squared:  0.4025,	Adjusted R-squared:  0.3402 
+F-statistic: 6.466 on 5 and 48 DF,  p-value: 0.0001142
+
+
+
+ ================================================================================ 
+LAI MODELS
+================================================================================ 
+
+Full Model ANOVA (LAI ~ GWC * Population * Treatment):
+Analysis of Variance Table
+
+Response: lai_auc
+                                    Df Sum Sq Mean Sq F value  Pr(>F)   
+gwc_auc                              1  43115   43115 10.3569 0.00273 **
+Population                           2  41881   20940  5.0302 0.01185 * 
+`Treatment Name`                     2  39821   19910  4.7828 0.01439 * 
+gwc_auc:Population                   2   3426    1713  0.4115 0.66572   
+gwc_auc:`Treatment Name`             2  13537    6768  1.6259 0.21085   
+Population:`Treatment Name`          4   4745    1186  0.2850 0.88581   
+gwc_auc:Population:`Treatment Name`  4  10423    2606  0.6260 0.64705   
+Residuals                           36 149864    4163                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = lai_auc ~ gwc_auc * Population * `Treatment Name`, 
+    data = productivity_merged)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-111.725  -21.753   -7.586   18.142  179.899 
+
+Coefficients:
+                                                 Estimate Std. Error t value Pr(>|t|)
+(Intercept)                                      -161.976   1603.171  -0.101    0.920
+gwc_auc                                             7.496     35.168   0.213    0.832
+PopulationToolik                                 2835.702   1998.713   1.419    0.165
+PopulationColdfoot                               1097.102   2376.711   0.462    0.647
+`Treatment Name`Dry                               497.397   1631.376   0.305    0.762
+`Treatment Name`Deep                              109.691   1617.554   0.068    0.946
+gwc_auc:PopulationToolik                          -61.193     43.627  -1.403    0.169
+gwc_auc:PopulationColdfoot                        -25.260     51.389  -0.492    0.626
+gwc_auc:`Treatment Name`Dry                       -12.394     35.918  -0.345    0.732
+gwc_auc:`Treatment Name`Deep                       -4.372     35.684  -0.123    0.903
+PopulationToolik:`Treatment Name`Dry            -2888.579   2334.019  -1.238    0.224
+PopulationColdfoot:`Treatment Name`Dry          -1909.456   2614.891  -0.730    0.470
+PopulationToolik:`Treatment Name`Deep           -2682.470   2024.038  -1.325    0.193
+PopulationColdfoot:`Treatment Name`Deep          -982.152   2399.513  -0.409    0.685
+gwc_auc:PopulationToolik:`Treatment Name`Dry       62.105     51.451   1.207    0.235
+gwc_auc:PopulationColdfoot:`Treatment Name`Dry     42.795     57.101   0.749    0.458
+gwc_auc:PopulationToolik:`Treatment Name`Deep      57.461     44.545   1.290    0.205
+gwc_auc:PopulationColdfoot:`Treatment Name`Deep    21.389     52.185   0.410    0.684
+
+Residual standard error: 64.52 on 36 degrees of freedom
+Multiple R-squared:  0.5115,	Adjusted R-squared:  0.2809 
+F-statistic: 2.218 on 17 and 36 DF,  p-value: 0.02201
+
+
+ ================================================================================ 
+Simple Model (LAI ~ GWC):
+
+Call:
+lm(formula = lai_auc ~ gwc_auc, data = productivity_merged)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-92.94 -47.00 -12.00  34.06 216.61 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)   
+(Intercept) -116.333     77.323  -1.505  0.13850   
+gwc_auc        5.362      1.839   2.916  0.00522 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 71.21 on 52 degrees of freedom
+Multiple R-squared:  0.1405,	Adjusted R-squared:  0.124 
+F-statistic: 8.502 on 1 and 52 DF,  p-value: 0.005224
+
+
+ ================================================================================ 
+Population Model ANOVA (LAI ~ GWC * Population):
+Analysis of Variance Table
+
+Response: lai_auc
+                   Df Sum Sq Mean Sq F value   Pr(>F)   
+gwc_auc             1  43115   43115  9.3973 0.003562 **
+Population          2  41881   20940  4.5641 0.015324 * 
+gwc_auc:Population  2   1592     796  0.1735 0.841260   
+Residuals          48 220224    4588                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = lai_auc ~ gwc_auc * Population, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-110.42  -41.01  -15.35   25.11  199.19 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(>|t|)  
+(Intercept)                -176.464    122.691  -1.438   0.1568  
+gwc_auc                       7.376      2.989   2.468   0.0172 *
+PopulationToolik             75.139    174.788   0.430   0.6692  
+PopulationColdfoot           37.098    186.500   0.199   0.8432  
+gwc_auc:PopulationToolik     -1.962      4.196  -0.468   0.6421  
+gwc_auc:PopulationColdfoot   -2.390      4.439  -0.539   0.5927  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 67.73 on 48 degrees of freedom
+Multiple R-squared:  0.2822,	Adjusted R-squared:  0.2074 
+F-statistic: 3.775 on 5 and 48 DF,  p-value: 0.005805
+
+
+ ================================================================================ 
+Treatment Model ANOVA (LAI ~ GWC * Treatment):
+Analysis of Variance Table
+
+Response: lai_auc
+                         Df Sum Sq Mean Sq F value   Pr(>F)   
+gwc_auc                   1  43115   43115 11.0727 0.001687 **
+`Treatment Name`          2  52441   26220  6.7339 0.002644 **
+gwc_auc:`Treatment Name`  2  24353   12176  3.1271 0.052892 . 
+Residuals                48 186903    3894                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = lai_auc ~ gwc_auc * `Treatment Name`, data = productivity_merged)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-84.978 -36.970  -1.805  26.317 207.381 
+
+Coefficients:
+                             Estimate Std. Error t value Pr(>|t|)   
+(Intercept)                   1883.87     695.57   2.708  0.00934 **
+gwc_auc                        -37.34      15.05  -2.481  0.01664 * 
+`Treatment Name`Dry          -1515.33     735.53  -2.060  0.04482 * 
+`Treatment Name`Deep         -1828.29     707.25  -2.585  0.01283 * 
+gwc_auc:`Treatment Name`Dry     31.27      16.03   1.951  0.05696 . 
+gwc_auc:`Treatment Name`Deep    37.40      15.46   2.418  0.01943 * 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 62.4 on 48 degrees of freedom
+Multiple R-squared:  0.3908,	Adjusted R-squared:  0.3274 
+F-statistic: 6.159 on 5 and 48 DF,  p-value: 0.0001744
+
+
+
+ ================================================================================ 
+MODEL COMPARISONS
+================================================================================ 
+
+Comparing R-squared values:
+NDVI Simple Model R²: 0.179794 
+LAI Simple Model R²: 0.1405256 
+NDVI Population Model R²: 0.3469224 
+LAI Population Model R²: 0.2822167 
+NDVI Treatment Model R²: 0.4024669 
+LAI Treatment Model R²: 0.3908211 
+NDVI Full Model R²: 0.5391517 
+LAI Full Model R²: 0.5115433 
+
+Overall Correlations:
+# A tibble: 1 × 4
+  ndvi_gwc_cor lai_gwc_cor ndvi_lai_cor     n
+         <dbl>       <dbl>        <dbl> <int>
+1        0.424       0.375        0.916    54
+
+Correlations by Population:
+# A tibble: 3 × 5
+  Population ndvi_gwc_cor lai_gwc_cor ndvi_lai_cor     n
+  <fct>             <dbl>       <dbl>        <dbl> <int>
+1 Sagwon            0.615       0.571        0.947    18
+2 Toolik            0.296       0.331        0.933    18
+3 Coldfoot          0.618       0.473        0.900    18
+
+Correlations by Treatment:
+# A tibble: 3 × 5
+  `Treatment Name` ndvi_gwc_cor lai_gwc_cor ndvi_lai_cor     n
+  <fct>                   <dbl>       <dbl>        <dbl> <int>
+1 Wet                   -0.505     -0.403          0.970    18
+2 Dry                   -0.264     -0.319          0.937    18
+3 Deep                   0.0439     0.00675        0.915    18
+
+Slope Comparison by Population:
+  Population NDVI_slope LAI_slope
+1   Coldfoot  0.4712851  7.376246
+2     Toolik  0.2714075  5.413918
+3     Sagwon         NA        NA
+
+✓ Productivity comparison analysis complete!
+  - Models fitted and compared
+  - Correlations calculated
+  - Plots saved
+  - Summary tables saved
+Full Model ANOVA (NDVI ~ GWC * Population * Treatment):
+Analysis of Variance Table
+
+Response: ndvi_auc
+                                    Df Sum Sq Mean Sq F value    Pr(>F)    
+gwc_auc                              1 233.99 233.987 14.0449 0.0006252 ***
+Population                           2 189.57  94.783  5.6893 0.0071280 ** 
+`Treatment Name`                     2 144.34  72.170  4.3319 0.0206172 *  
+gwc_auc:Population                   2  23.74  11.872  0.7126 0.4971590    
+gwc_auc:`Treatment Name`             2  51.91  25.953  1.5578 0.2244598    
+Population:`Treatment Name`          4  16.45   4.112  0.2468 0.9096988    
+gwc_auc:Population:`Treatment Name`  4  41.67  10.418  0.6253 0.6474808    
+Residuals                           36 599.76  16.660                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc * Population * `Treatment Name`, 
+    data = productivity_merged)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-7.995 -2.463 -0.258  1.851  7.360 
+
+Coefficients:
+                                                  Estimate Std. Error t value Pr(>|t|)
+(Intercept)                                       47.40483  101.41876   0.467    0.643
+gwc_auc                                           -0.34101    2.22477  -0.153    0.879
+PopulationToolik                                 121.13415  126.44130   0.958    0.344
+PopulationColdfoot                                30.48834  150.35395   0.203    0.840
+`Treatment Name`Dry                               -1.47725  103.20304  -0.014    0.989
+`Treatment Name`Deep                             -36.46255  102.32865  -0.356    0.724
+gwc_auc:PopulationToolik                          -2.62255    2.75988  -0.950    0.348
+gwc_auc:PopulationColdfoot                        -0.71977    3.25096  -0.221    0.826
+gwc_auc:`Treatment Name`Dry                       -0.05082    2.27220  -0.022    0.982
+gwc_auc:`Treatment Name`Deep                       0.72630    2.25744   0.322    0.750
+PopulationToolik:`Treatment Name`Dry            -165.77846  147.65318  -1.123    0.269
+PopulationColdfoot:`Treatment Name`Dry          -100.41468  165.42150  -0.607    0.548
+PopulationToolik:`Treatment Name`Deep           -103.43007  128.04337  -0.808    0.425
+PopulationColdfoot:`Treatment Name`Deep          -22.90830  151.79645  -0.151    0.881
+gwc_auc:PopulationToolik:`Treatment Name`Dry       3.60513    3.25484   1.108    0.275
+gwc_auc:PopulationColdfoot:`Treatment Name`Dry     2.26125    3.61227   0.626    0.535
+gwc_auc:PopulationToolik:`Treatment Name`Deep      2.16211    2.81799   0.767    0.448
+gwc_auc:PopulationColdfoot:`Treatment Name`Deep    0.39149    3.30131   0.119    0.906
+
+Residual standard error: 4.082 on 36 degrees of freedom
+Multiple R-squared:  0.5392,	Adjusted R-squared:  0.3215 
+F-statistic: 2.477 on 17 and 36 DF,  p-value: 0.01091
+
+
+Call:
+lm(formula = ndvi_auc ~ gwc_auc * Population * `Treatment Name`, 
+    data = productivity_merged)
+
+Coefficients:
+                                    (Intercept)                                          gwc_auc  
+                                       47.40483                                         -0.34101  
+                               PopulationToolik                               PopulationColdfoot  
+                                      121.13415                                         30.48834  
+                            `Treatment Name`Dry                             `Treatment Name`Deep  
+                                       -1.47725                                        -36.46255  
+                       gwc_auc:PopulationToolik                       gwc_auc:PopulationColdfoot  
+                                       -2.62255                                         -0.71977  
+                    gwc_auc:`Treatment Name`Dry                     gwc_auc:`Treatment Name`Deep  
+                                       -0.05082                                          0.72630  
+           PopulationToolik:`Treatment Name`Dry           PopulationColdfoot:`Treatment Name`Dry  
+                                     -165.77846                                       -100.41468  
+          PopulationToolik:`Treatment Name`Deep          PopulationColdfoot:`Treatment Name`Deep  
+                                     -103.43007                                        -22.90830  
+   gwc_auc:PopulationToolik:`Treatment Name`Dry   gwc_auc:PopulationColdfoot:`Treatment Name`Dry  
+                                        3.60513                                          2.26125  
+  gwc_auc:PopulationToolik:`Treatment Name`Deep  gwc_auc:PopulationColdfoot:`Treatment Name`Deep  
+                                        2.16211                                          0.39149  
+
+standardGeneric for "summary" defined from package "base"
+
+function (object, ...) 
+standardGeneric("summary")
+<environment: 0x12f0edeb0>
+Methods may be defined for arguments: object
+Use  showMethods(summary)  for currently available ones.

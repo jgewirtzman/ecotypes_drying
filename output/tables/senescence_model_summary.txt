@@ -1,0 +1,38 @@
+Senescence Onset Model (90% of peak):
+
+Call:
+lm(formula = DOY_senescence_onset ~ TreatmentName * Population, 
+    data = senescence_onset_90pct)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-28.333 -11.200   2.667   9.667  35.800 
+
+Coefficients:
+                                     Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                           236.333      9.442  25.030   <2e-16 ***
+TreatmentNameDry                       -8.333     12.491  -0.667    0.509    
+TreatmentNameDeep                      -1.000     11.564  -0.086    0.932    
+PopulationToolik                        3.833     11.564   0.331    0.742    
+PopulationColdfoot                      6.000     11.564   0.519    0.607    
+TreatmentNameDry:PopulationToolik      -3.667     15.658  -0.234    0.816    
+TreatmentNameDeep:PopulationToolik      3.333     14.929   0.223    0.824    
+TreatmentNameDry:PopulationColdfoot   -15.800     15.940  -0.991    0.328    
+TreatmentNameDeep:PopulationColdfoot  -18.667     14.929  -1.250    0.219    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 16.35 on 39 degrees of freedom
+Multiple R-squared:  0.2466,	Adjusted R-squared:  0.09204 
+F-statistic: 1.596 on 8 and 39 DF,  p-value: 0.1578
+
+Analysis of Variance Table
+
+Response: DOY_senescence_onset
+                         Df  Sum Sq Mean Sq F value  Pr(>F)  
+TreatmentName             2  1804.6  902.32  3.3738 0.04452 *
+Population                2   744.2  372.12  1.3913 0.26082  
+TreatmentName:Population  4   865.0  216.24  0.8085 0.52733  
+Residuals                39 10430.6  267.45                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

@@ -164,3 +164,152 @@ ggsave("output/figures/soil_moisture_combined.pdf", combined_plot, width = 8, he
 # Save summary statistics
 write_csv(raw_means, "output/tables/soil_moisture_raw_means.csv")
 write_csv(treatment_means, "output/tables/soil_moisture_treatment_means.csv")
+
+
+# Calculate means per population and treatment (which defines the block)
+block_means <- soil_gwc %>%
+  group_by(Population, `Treatment Name`) %>%
+  summarize(
+    mean_gwc = mean(GWC, na.rm = TRUE) * 100,
+    sd_gwc = sd(GWC, na.rm = TRUE) * 100,
+    se_gwc = sd(GWC, na.rm = TRUE) / sqrt(n()) * 100,
+    n = n(),
+    .groups = "drop"
+  ) %>%
+  mutate(Block = paste(Population, `Treatment Name`, sep = "_"))
+
+# Calculate treatment differences within each population
+treatment_diffs <- block_means %>%
+  group_by(Population) %>%
+  arrange(Population, `Treatment Name`) %>%
+  summarize(
+    Wet_minus_Dry = mean_gwc[`Treatment Name` == "Wet"] - mean_gwc[`Treatment Name` == "Dry"],
+    Wet_minus_Deep = mean_gwc[`Treatment Name` == "Wet"] - mean_gwc[`Treatment Name` == "Deep"],
+    Dry_minus_Deep = mean_gwc[`Treatment Name` == "Dry"] - mean_gwc[`Treatment Name` == "Deep"],
+    .groups = "drop"
+  )
+
+# Calculate population differences within each treatment
+pop_diffs <- block_means %>%
+  group_by(`Treatment Name`) %>%
+  arrange(`Treatment Name`, Population) %>%
+  summarize(
+    Sagwon_minus_Toolik = mean_gwc[Population == "Sagwon"] - mean_gwc[Population == "Toolik"],
+    Sagwon_minus_Coldfoot = mean_gwc[Population == "Sagwon"] - mean_gwc[Population == "Coldfoot"],
+    Toolik_minus_Coldfoot = mean_gwc[Population == "Toolik"] - mean_gwc[Population == "Coldfoot"],
+    .groups = "drop"
+  )
+
+# Save results
+write_csv(block_means, "output/tables/soil_moisture_block_means.csv")
+write_csv(treatment_diffs, "output/tables/treatment_differences.csv")
+write_csv(pop_diffs, "output/tables/population_differences.csv")
+
+# Print summary
+cat("\nBlock Means (Population × Treatment):\n")
+print(block_means)
+
+cat("\nTreatment Differences within Population:\n")
+print(treatment_diffs)
+
+cat("\nPopulation Differences within Treatment:\n")
+print(pop_diffs)
+
+
+
+# Calculate treatment differences within each population (absolute and %)
+treatment_diffs <- block_means %>%
+  group_by(Population) %>%
+  arrange(Population, `Treatment Name`) %>%
+  summarize(
+    # Absolute differences
+    Wet_minus_Dry = mean_gwc[`Treatment Name` == "Wet"] - mean_gwc[`Treatment Name` == "Dry"],
+    Wet_minus_Deep = mean_gwc[`Treatment Name` == "Wet"] - mean_gwc[`Treatment Name` == "Deep"],
+    Dry_minus_Deep = mean_gwc[`Treatment Name` == "Dry"] - mean_gwc[`Treatment Name` == "Deep"],
+    # Percent differences (relative to baseline)
+    Wet_minus_Dry_pct = (mean_gwc[`Treatment Name` == "Wet"] - mean_gwc[`Treatment Name` == "Dry"]) / mean_gwc[`Treatment Name` == "Dry"] * 100,
+    Wet_minus_Deep_pct = (mean_gwc[`Treatment Name` == "Wet"] - mean_gwc[`Treatment Name` == "Deep"]) / mean_gwc[`Treatment Name` == "Deep"] * 100,
+    Dry_minus_Deep_pct = (mean_gwc[`Treatment Name` == "Dry"] - mean_gwc[`Treatment Name` == "Deep"]) / mean_gwc[`Treatment Name` == "Deep"] * 100,
+    .groups = "drop"
+  )
+
+# Calculate population differences within each treatment (absolute and %)
+pop_diffs <- block_means %>%
+  group_by(`Treatment Name`) %>%
+  arrange(`Treatment Name`, Population) %>%
+  summarize(
+    # Absolute differences
+    Sagwon_minus_Toolik = mean_gwc[Population == "Sagwon"] - mean_gwc[Population == "Toolik"],
+    Sagwon_minus_Coldfoot = mean_gwc[Population == "Sagwon"] - mean_gwc[Population == "Coldfoot"],
+    Toolik_minus_Coldfoot = mean_gwc[Population == "Toolik"] - mean_gwc[Population == "Coldfoot"],
+    # Percent differences (relative to baseline)
+    Sagwon_minus_Toolik_pct = (mean_gwc[Population == "Sagwon"] - mean_gwc[Population == "Toolik"]) / mean_gwc[Population == "Toolik"] * 100,
+    Sagwon_minus_Coldfoot_pct = (mean_gwc[Population == "Sagwon"] - mean_gwc[Population == "Coldfoot"]) / mean_gwc[Population == "Coldfoot"] * 100,
+    Toolik_minus_Coldfoot_pct = (mean_gwc[Population == "Toolik"] - mean_gwc[Population == "Coldfoot"]) / mean_gwc[Population == "Coldfoot"] * 100,
+    .groups = "drop"
+  )
+
+# Save results
+write_csv(block_means, "output/tables/soil_moisture_block_means.csv")
+write_csv(treatment_diffs, "output/tables/treatment_differences.csv")
+write_csv(pop_diffs, "output/tables/population_differences.csv")
+
+# Print summary
+cat("\nBlock Means (Population × Treatment):\n")
+print(block_means)
+
+cat("\nTreatment Differences within Population:\n")
+print(treatment_diffs)
+
+cat("\nPopulation Differences within Treatment:\n")
+print(pop_diffs)
+
+
+# Calculate CV for treatments (across all populations)
+treatment_cv <- soil_gwc %>%
+  group_by(`Treatment Name`) %>%
+  summarize(mean_gwc = mean(GWC, na.rm = TRUE) * 100) %>%
+  summarize(
+    grand_mean = mean(mean_gwc),
+    sd = sd(mean_gwc),
+    cv = (sd / grand_mean) * 100
+  )
+
+cat("\nCoefficient of Variation for Treatments:\n")
+print(treatment_cv)
+
+# Calculate CV for populations (across all treatments)
+population_cv <- soil_gwc %>%
+  group_by(Population) %>%
+  summarize(mean_gwc = mean(GWC, na.rm = TRUE) * 100) %>%
+  summarize(
+    grand_mean = mean(mean_gwc),
+    sd = sd(mean_gwc),
+    cv = (sd / grand_mean) * 100
+  )
+
+cat("\nCoefficient of Variation for Populations:\n")
+print(population_cv)
+
+# Alternative: Calculate CV from the block_means you already have
+treatment_cv_from_blocks <- block_means %>%
+  group_by(`Treatment Name`) %>%
+  summarize(mean_gwc = mean(mean_gwc)) %>%
+  summarize(
+    grand_mean = mean(mean_gwc),
+    sd = sd(mean_gwc),
+    cv = (sd / grand_mean) * 100
+  )
+
+population_cv_from_blocks <- block_means %>%
+  group_by(Population) %>%
+  summarize(mean_gwc = mean(mean_gwc)) %>%
+  summarize(
+    grand_mean = mean(mean_gwc),
+    sd = sd(mean_gwc),
+    cv = (sd / grand_mean) * 100
+  )
+
+cat("\nFrom block means:\n")
+cat("Treatment CV:", round(treatment_cv_from_blocks$cv, 1), "%\n")
+cat("Population CV:", round(population_cv_from_blocks$cv, 1), "%\n")

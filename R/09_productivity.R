@@ -117,3 +117,55 @@ cat("\nCorrelation between GWC and NDVI by population:\n")
 ndvi_gwc_merged %>%
   group_by(Population) %>%
   summarize(correlation = cor(gwc_auc, ndvi_auc, use = "complete.obs"))
+
+
+
+
+
+# Calculate productivity differences between treatments
+treatment_comparison <- ndvi_gwc_merged %>%
+  group_by(`Treatment Name`) %>%
+  summarize(
+    mean_ndvi_auc = mean(ndvi_auc, na.rm = TRUE),
+    se_ndvi_auc = sd(ndvi_auc, na.rm = TRUE) / sqrt(n()),
+    n = n(),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(mean_ndvi_auc))
+
+print(treatment_comparison)
+
+# Calculate percent reduction from highest to lowest treatment
+if(nrow(treatment_comparison) >= 2) {
+  highest_productivity <- treatment_comparison$mean_ndvi_auc[1]
+  lowest_productivity <- treatment_comparison$mean_ndvi_auc[nrow(treatment_comparison)]
+  
+  percent_reduction <- ((highest_productivity - lowest_productivity) / highest_productivity) * 100
+  
+  cat("\nProductivity Comparison:\n")
+  cat("Highest treatment mean NDVI AUC:", round(highest_productivity, 2), "\n")
+  cat("Lowest treatment mean NDVI AUC:", round(lowest_productivity, 2), "\n")
+  cat("Percent reduction:", round(percent_reduction, 2), "%\n")
+}
+
+# Also calculate by population and treatment
+population_treatment_comparison <- ndvi_gwc_merged %>%
+  group_by(Population, `Treatment Name`) %>%
+  summarize(
+    mean_ndvi_auc = mean(ndvi_auc, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  group_by(Population) %>%
+  mutate(
+    max_ndvi = max(mean_ndvi_auc),
+    percent_of_max = (mean_ndvi_auc / max_ndvi) * 100,
+    percent_reduction = 100 - percent_of_max
+  ) %>%
+  arrange(Population, desc(mean_ndvi_auc))
+
+print("\nProductivity by Population and Treatment:")
+print(population_treatment_comparison)
+
+# Save results
+write_csv(treatment_comparison, "output/tables/treatment_productivity_comparison.csv")
+write_csv(population_treatment_comparison, "output/tables/population_treatment_productivity.csv")
