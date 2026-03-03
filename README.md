@@ -1,6 +1,6 @@
 # Ecotypes Drying Experiment
 
-Analysis code and data for: **"Soil drying induces widespread productivity loss but unequal climate vulnerability among ecotypes of a foundational Arctic sedge"** (Gewirtzman et al., *Functional Ecology*).
+Analysis code and data for: **"Soil drying induces widespread productivity loss but unequal climate vulnerability among ecotypes of a foundational Arctic sedge"** (Gewirtzman et al.).
 
 ## Project Overview
 
@@ -40,8 +40,6 @@ R/                                  # Analysis scripts (run in numerical order)
   ecotypes_map.R                    # Study site map
   treatment_timeline.R              # Experimental timeline figure
   main_workflow.R                   # Runs all scripts in sequence
-  reviewer_phenology_exploration.R  # Segmented regression (reviewer response)
-  reviewer_response_exploration.R   # A/Ci temperature exploration (reviewer response)
   utils/
     themes.R                        # ggplot themes
     stats.R                         # Statistical helper functions
@@ -58,7 +56,6 @@ data/
 output/
   figures/                          # Generated PDF/PNG figures
   tables/                           # Model summaries, CSV tables
-  reviewer_response_summary.md      # Summary of reviewer response analyses
 ```
 
 ## Usage
@@ -67,7 +64,7 @@ output/
 2. Run `source("R/00_setup.R")` to install/load all packages
 3. Run scripts in numerical order (01-14), or use `R/main_workflow.R`
 
-Scripts 06b, `reviewer_phenology_exploration.R`, and `reviewer_response_exploration.R` are standalone analyses for the revision and can be run independently after `00_setup.R`.
+Script `06b_aci_refit.R` is a standalone A/Ci sensitivity analysis and can be run independently after `00_setup.R`.
 
 ## Key R Packages
 
@@ -78,7 +75,6 @@ Installed automatically by `00_setup.R`:
 - **randomForest** -- variable importance
 - **patchwork** -- multi-panel figures
 - **plantecophys** -- A/Ci curve fitting (used in 06b_aci_refit.R)
-- **segmented** -- piecewise regression (used in reviewer_phenology_exploration.R)
 
 ## Contact
 
