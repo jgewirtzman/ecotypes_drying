@@ -86,6 +86,10 @@ Installed automatically by `00_setup.R`:
 - **patchwork** -- multi-panel figures
 - **plantecophys** -- A/Ci curve fitting (used in 06b_aci_refit.R)
 
+## Data
+
+Archived data and code: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18843791.svg)](https://doi.org/10.5281/zenodo.18843791)
+
 ## Contact
 
 Jon Gewirtzman
