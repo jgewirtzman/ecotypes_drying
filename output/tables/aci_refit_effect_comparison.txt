@@ -1,0 +1,76 @@
+================================================================
+EFFECT SIZE AND DIRECTION COMPARISON: Tcorrect=TRUE vs FALSE
+================================================================
+
+--- Treatment means (pooled across populations) ---
+
+                   Tcorrect=TRUE (25C)           Tcorrect=FALSE (~28C)
+Parameter  Trt     Mean +/- SE                   Mean +/- SE
+------------------------------------------------------------------------
+Vcmax      Wet      51.0 +/-  5.6                   84.2 +/-  8.8
+Vcmax      Dry      57.4 +/-  7.9                   79.6 +/-  9.7
+Vcmax      Deep     42.7 +/-  8.5                   47.5 +/-  9.5
+
+Jmax       Wet     149.2 +/- 15.0                  183.0 +/- 19.4
+Jmax       Dry     167.9 +/- 22.6                  193.5 +/- 25.9
+Jmax       Deep    113.3 +/- 23.4                  116.9 +/- 23.6
+
+
+--- Treatment rank order (1 = highest mean) ---
+
+                Tcorrect=TRUE       Tcorrect=FALSE
+Parameter  Trt   Rank                Rank
+----------------------------------------------------
+Vcmax      Wet      2                    1
+Vcmax      Dry      1                    2
+Vcmax      Deep     3                    3
+
+Jmax       Wet      2                    2
+Jmax       Dry      1                    1
+Jmax       Deep     3                    3
+
+
+--- Fixed effect coefficients (ref = Sagwon, Wet) ---
+
+                  Tcorrect=TRUE (25C)              Tcorrect=FALSE (~28C)
+Parameter  Term     Estimate   SE      p           Estimate   SE      p
+--------------------------------------------------------------------------
+Vcmax      Dry         +5.8   17.3   0.744          -15.3   22.9   0.515  
+Vcmax      Deep        -3.3   19.5   0.867          -51.7   25.6   0.062 .
+
+Jmax       Dry        +13.7   45.9   0.769           +4.4   56.0   0.939  
+Jmax       Deep       -23.5   52.0   0.658          -65.1   63.2   0.320  
+
+
+--- ANOVA F-tests ---
+
+                     Tcorrect=TRUE         Tcorrect=FALSE
+Parameter  Effect     F       p             F       p
+----------------------------------------------------------
+Vcmax      Population  1.31   0.3022         0.92   0.4185
+Vcmax      Treatment   0.63   0.5482         3.45   0.0586
+Vcmax      Pop x Trt   0.56   0.6945         0.58   0.6828
+
+Jmax       Population  0.98   0.3987         0.75   0.4911
+Jmax       Treatment   0.97   0.4032         1.76   0.2065
+Jmax       Pop x Trt   0.78   0.5553         0.54   0.7122
+
+
+--- Qualitative Assessment ---
+
+Direction consistency:
+  Deep effect on Vcmax: NEGATIVE under both methods
+  Deep effect on Jmax:  NEGATIVE under both methods
+  Dry effect on Vcmax:  positive (TRUE) vs negative (FALSE) -- both NS
+  Dry effect on Jmax:   positive under both methods -- both NS
+
+Rank order consistency:
+  Vcmax treatment rank order same? FALSE 
+  Jmax treatment rank order same?  TRUE 
+
+Key finding: Deep is consistently the lowest for both parameters
+under both correction methods. The Wet-Dry ordering is inconsistent
+for Vcmax (flips between methods) but both differences are small
+and non-significant. The biological conclusion is unchanged:
+deep drought tends to reduce photosynthetic capacity, while
+shallow drought has no detectable effect.

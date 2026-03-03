@@ -1,0 +1,321 @@
+=== Vcmax Model (Tcorrect=TRUE, corrected to 25C) ===
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: Vcmax ~ Population * TreatmentName + (1 | Tag) + (1 | Date)
+   Data: results_corrected
+
+REML criterion at convergence: 143.4
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.47602 -0.52494  0.03073  0.62438  1.15373 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept)   0.00    0.000  
+ Date     (Intercept)  43.38    6.586  
+ Residual             449.07   21.191  
+Number of obs: 24, groups:  Tag, 19; Date, 2
+
+Fixed effects:
+                                     Estimate Std. Error      df t value
+(Intercept)                            57.540     13.143   8.057   4.378
+PopulationToolik                       -9.618     17.303  14.000  -0.556
+PopulationColdfoot                     -6.880     17.303  14.000  -0.398
+TreatmentNameDry                        5.753     17.303  14.000   0.332
+TreatmentNameDeep                      -3.331     19.485  14.462  -0.171
+PopulationToolik:TreatmentNameDry       5.615     24.470  14.000   0.229
+PopulationColdfoot:TreatmentNameDry    -3.801     24.470  14.000  -0.155
+PopulationToolik:TreatmentNameDeep     15.441     27.358  14.000   0.564
+PopulationColdfoot:TreatmentNameDeep  -24.245     27.358  14.000  -0.886
+                                     Pr(>|t|)   
+(Intercept)                           0.00232 **
+PopulationToolik                      0.58708   
+PopulationColdfoot                    0.69689   
+TreatmentNameDry                      0.74445   
+TreatmentNameDeep                     0.86664   
+PopulationToolik:TreatmentNameDry     0.82184   
+PopulationColdfoot:TreatmentNameDry   0.87879   
+PopulationToolik:TreatmentNameDeep    0.58142   
+PopulationColdfoot:TreatmentNameDeep  0.39048   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+                      (Intr) PpltnT PpltnC TrtmntNmDr TrtmntNmDp
+PopulatnTlk           -0.658                                    
+PopltnCldft           -0.658  0.500                             
+TrtmntNmDry           -0.658  0.500  0.500                      
+TretmntNmDp           -0.574  0.444  0.444  0.444               
+PpltnTlk:TrtmntNmDr    0.465 -0.707 -0.354 -0.707     -0.314    
+PpltnCldft:TrtmntNmDr  0.465 -0.354 -0.707 -0.707     -0.314    
+PpltnTlk:TrtmntNmDp    0.416 -0.632 -0.316 -0.316     -0.702    
+PpltnCldft:TrtmntNmDp  0.416 -0.316 -0.632 -0.316     -0.702    
+                      PpltnTlk:TrtmntNmDr PpltnCldft:TrtmntNmDr
+PopulatnTlk                                                    
+PopltnCldft                                                    
+TrtmntNmDry                                                    
+TretmntNmDp                                                    
+PpltnTlk:TrtmntNmDr                                            
+PpltnCldft:TrtmntNmDr  0.500                                   
+PpltnTlk:TrtmntNmDp    0.447               0.224               
+PpltnCldft:TrtmntNmDp  0.224               0.447               
+                      PpltnTlk:TrtmntNmDp
+PopulatnTlk                              
+PopltnCldft                              
+TrtmntNmDry                              
+TretmntNmDp                              
+PpltnTlk:TrtmntNmDr                      
+PpltnCldft:TrtmntNmDr                    
+PpltnTlk:TrtmntNmDp                      
+PpltnCldft:TrtmntNmDp  0.500             
+optimizer (nloptwrap) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+Type III Analysis of Variance Table with Satterthwaite's method
+                         Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+Population               1172.3  586.14     2 14.000  1.3052 0.3022
+TreatmentName             562.5  281.25     2 14.729  0.6263 0.5482
+Population:TreatmentName 1008.5  252.11     4 14.000  0.5614 0.6945
+
+=== Jmax Model (Tcorrect=TRUE, corrected to 25C) ===
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: Jmax ~ Population * TreatmentName + (1 | Tag) + (1 | Date)
+   Data: results_corrected
+
+REML criterion at convergence: 173.3
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.4235 -0.4919  0.1490  0.5772  1.1927 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept)    0.0    0.00   
+ Date     (Intercept)  936.3   30.60   
+ Residual             3164.5   56.25   
+Number of obs: 24, groups:  Tag, 19; Date, 2
+
+Fixed effects:
+                                     Estimate Std. Error      df t value
+(Intercept)                           173.072     39.223   4.679   4.413
+PopulationToolik                      -36.801     45.931  14.000  -0.801
+PopulationColdfoot                    -16.610     45.931  14.000  -0.362
+TreatmentNameDry                       13.750     45.931  14.000   0.299
+TreatmentNameDeep                     -23.494     51.950  14.256  -0.452
+PopulationToolik:TreatmentNameDry      18.797     64.956  14.000   0.289
+PopulationColdfoot:TreatmentNameDry    -3.998     64.956  14.000  -0.062
+PopulationToolik:TreatmentNameDeep     61.259     72.623  14.000   0.844
+PopulationColdfoot:TreatmentNameDeep  -62.311     72.623  14.000  -0.858
+                                     Pr(>|t|)   
+(Intercept)                            0.0081 **
+PopulationToolik                       0.4364   
+PopulationColdfoot                     0.7230   
+TreatmentNameDry                       0.7691   
+TreatmentNameDeep                      0.6579   
+PopulationToolik:TreatmentNameDry      0.7765   
+PopulationColdfoot:TreatmentNameDry    0.9518   
+PopulationToolik:TreatmentNameDeep     0.4131   
+PopulationColdfoot:TreatmentNameDeep   0.4053   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+                      (Intr) PpltnT PpltnC TrtmntNmDr TrtmntNmDp
+PopulatnTlk           -0.586                                    
+PopltnCldft           -0.586  0.500                             
+TrtmntNmDry           -0.586  0.500  0.500                      
+TretmntNmDp           -0.503  0.442  0.442  0.442               
+PpltnTlk:TrtmntNmDr    0.414 -0.707 -0.354 -0.707     -0.313    
+PpltnCldft:TrtmntNmDr  0.414 -0.354 -0.707 -0.707     -0.313    
+PpltnTlk:TrtmntNmDp    0.370 -0.632 -0.316 -0.316     -0.699    
+PpltnCldft:TrtmntNmDp  0.370 -0.316 -0.632 -0.316     -0.699    
+                      PpltnTlk:TrtmntNmDr PpltnCldft:TrtmntNmDr
+PopulatnTlk                                                    
+PopltnCldft                                                    
+TrtmntNmDry                                                    
+TretmntNmDp                                                    
+PpltnTlk:TrtmntNmDr                                            
+PpltnCldft:TrtmntNmDr  0.500                                   
+PpltnTlk:TrtmntNmDp    0.447               0.224               
+PpltnCldft:TrtmntNmDp  0.224               0.447               
+                      PpltnTlk:TrtmntNmDp
+PopulatnTlk                              
+PopltnCldft                              
+TrtmntNmDry                              
+TretmntNmDp                              
+PpltnTlk:TrtmntNmDr                      
+PpltnCldft:TrtmntNmDr                    
+PpltnTlk:TrtmntNmDp                      
+PpltnCldft:TrtmntNmDp  0.500             
+optimizer (nloptwrap) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+Type III Analysis of Variance Table with Satterthwaite's method
+                         Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+Population               6219.8  3109.9     2 14.000  0.9828 0.3987
+TreatmentName            6126.3  3063.1     2 14.428  0.9680 0.4032
+Population:TreatmentName 9899.3  2474.8     4 14.000  0.7821 0.5553
+
+=== Vcmax Model (Tcorrect=FALSE, at measurement temp ~28C) ===
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: Vcmax ~ Population * TreatmentName + (1 | Tag) + (1 | Date)
+   Data: results_uncorrected
+
+REML criterion at convergence: 151.3
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.3657 -0.5412  0.1499  0.5968  1.3341 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept)   0.0     0.00   
+ Date     (Intercept)   0.0     0.00   
+ Residual             787.5    28.06   
+Number of obs: 24, groups:  Tag, 19; Date, 2
+
+Fixed effects:
+                                     Estimate Std. Error      df t value
+(Intercept)                           101.817     16.202  15.000   6.284
+PopulationToolik                      -28.358     22.913  15.000  -1.238
+PopulationColdfoot                    -24.406     22.913  15.000  -1.065
+TreatmentNameDry                      -15.274     22.913  15.000  -0.667
+TreatmentNameDeep                     -51.734     25.617  15.000  -2.020
+PopulationToolik:TreatmentNameDry      17.147     32.403  15.000   0.529
+PopulationColdfoot:TreatmentNameDry    14.687     32.403  15.000   0.453
+PopulationToolik:TreatmentNameDeep     44.317     36.228  15.000   1.223
+PopulationColdfoot:TreatmentNameDeep    0.599     36.228  15.000   0.017
+                                     Pr(>|t|)    
+(Intercept)                          1.46e-05 ***
+PopulationToolik                       0.2349    
+PopulationColdfoot                     0.3036    
+TreatmentNameDry                       0.5151    
+TreatmentNameDeep                      0.0617 .  
+PopulationToolik:TreatmentNameDry      0.6044    
+PopulationColdfoot:TreatmentNameDry    0.6568    
+PopulationToolik:TreatmentNameDeep     0.2401    
+PopulationColdfoot:TreatmentNameDeep   0.9870    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+                      (Intr) PpltnT PpltnC TrtmntNmDr TrtmntNmDp
+PopulatnTlk           -0.707                                    
+PopltnCldft           -0.707  0.500                             
+TrtmntNmDry           -0.707  0.500  0.500                      
+TretmntNmDp           -0.632  0.447  0.447  0.447               
+PpltnTlk:TrtmntNmDr    0.500 -0.707 -0.354 -0.707     -0.316    
+PpltnCldft:TrtmntNmDr  0.500 -0.354 -0.707 -0.707     -0.316    
+PpltnTlk:TrtmntNmDp    0.447 -0.632 -0.316 -0.316     -0.707    
+PpltnCldft:TrtmntNmDp  0.447 -0.316 -0.632 -0.316     -0.707    
+                      PpltnTlk:TrtmntNmDr PpltnCldft:TrtmntNmDr
+PopulatnTlk                                                    
+PopltnCldft                                                    
+TrtmntNmDry                                                    
+TretmntNmDp                                                    
+PpltnTlk:TrtmntNmDr                                            
+PpltnCldft:TrtmntNmDr  0.500                                   
+PpltnTlk:TrtmntNmDp    0.447               0.224               
+PpltnCldft:TrtmntNmDp  0.224               0.447               
+                      PpltnTlk:TrtmntNmDp
+PopulatnTlk                              
+PopltnCldft                              
+TrtmntNmDry                              
+TretmntNmDp                              
+PpltnTlk:TrtmntNmDr                      
+PpltnCldft:TrtmntNmDr                    
+PpltnTlk:TrtmntNmDp                      
+PpltnCldft:TrtmntNmDp  0.500             
+optimizer (nloptwrap) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+Type III Analysis of Variance Table with Satterthwaite's method
+                         Sum Sq Mean Sq NumDF DenDF F value  Pr(>F)  
+Population               1454.7  727.35     2    15  0.9237 0.41851  
+TreatmentName            5432.5 2716.23     2    15  3.4493 0.05855 .
+Population:TreatmentName 1822.0  455.51     4    15  0.5784 0.68277  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+=== Jmax Model (Tcorrect=FALSE, at measurement temp ~28C) ===
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: Jmax ~ Population * TreatmentName + (1 | Tag) + (1 | Date)
+   Data: results_uncorrected
+
+REML criterion at convergence: 178.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.3734 -0.4295  0.1724  0.4132  1.3917 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Tag      (Intercept)    0      0.00   
+ Date     (Intercept)  739     27.19   
+ Residual             4707     68.61   
+Number of obs: 24, groups:  Tag, 19; Date, 2
+
+Fixed effects:
+                                     Estimate Std. Error      df t value
+(Intercept)                           209.588     44.236   6.639   4.738
+PopulationToolik                      -39.123     56.019  14.000  -0.698
+PopulationColdfoot                    -26.153     56.019  14.000  -0.467
+TreatmentNameDry                        4.359     56.019  14.000   0.078
+TreatmentNameDeep                     -65.078     63.210  14.372  -1.030
+PopulationToolik:TreatmentNameDry      15.185     79.223  14.000   0.192
+PopulationColdfoot:TreatmentNameDry     3.194     79.223  14.000   0.040
+PopulationToolik:TreatmentNameDeep     72.958     88.574  14.000   0.824
+PopulationColdfoot:TreatmentNameDeep  -47.465     88.574  14.000  -0.536
+                                     Pr(>|t|)   
+(Intercept)                           0.00244 **
+PopulationToolik                      0.49638   
+PopulationColdfoot                    0.64778   
+TreatmentNameDry                      0.93907   
+TreatmentNameDeep                     0.32024   
+PopulationToolik:TreatmentNameDry     0.85075   
+PopulationColdfoot:TreatmentNameDry   0.96841   
+PopulationToolik:TreatmentNameDeep    0.42392   
+PopulationColdfoot:TreatmentNameDeep  0.60045   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Correlation of Fixed Effects:
+                      (Intr) PpltnT PpltnC TrtmntNmDr TrtmntNmDp
+PopulatnTlk           -0.633                                    
+PopltnCldft           -0.633  0.500                             
+TrtmntNmDry           -0.633  0.500  0.500                      
+TretmntNmDp           -0.548  0.443  0.443  0.443               
+PpltnTlk:TrtmntNmDr    0.448 -0.707 -0.354 -0.707     -0.313    
+PpltnCldft:TrtmntNmDr  0.448 -0.354 -0.707 -0.707     -0.313    
+PpltnTlk:TrtmntNmDp    0.400 -0.632 -0.316 -0.316     -0.701    
+PpltnCldft:TrtmntNmDp  0.400 -0.316 -0.632 -0.316     -0.701    
+                      PpltnTlk:TrtmntNmDr PpltnCldft:TrtmntNmDr
+PopulatnTlk                                                    
+PopltnCldft                                                    
+TrtmntNmDry                                                    
+TretmntNmDp                                                    
+PpltnTlk:TrtmntNmDr                                            
+PpltnCldft:TrtmntNmDr  0.500                                   
+PpltnTlk:TrtmntNmDp    0.447               0.224               
+PpltnCldft:TrtmntNmDp  0.224               0.447               
+                      PpltnTlk:TrtmntNmDp
+PopulatnTlk                              
+PopltnCldft                              
+TrtmntNmDry                              
+TretmntNmDp                              
+PpltnTlk:TrtmntNmDr                      
+PpltnCldft:TrtmntNmDr                    
+PpltnTlk:TrtmntNmDp                      
+PpltnCldft:TrtmntNmDp  0.500             
+optimizer (nloptwrap) convergence code: 0 (OK)
+boundary (singular) fit: see help('isSingular')
+
+Type III Analysis of Variance Table with Satterthwaite's method
+                          Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+Population                7045.8  3522.9     2 14.000  0.7484 0.4911
+TreatmentName            16575.0  8287.5     2 14.605  1.7606 0.2065
+Population:TreatmentName 10079.0  2519.8     4 14.000  0.5353 0.7122
