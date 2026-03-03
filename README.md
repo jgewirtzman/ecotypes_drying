@@ -1,99 +1,87 @@
-# Ecotypes drying experiment
+# Ecotypes Drying Experiment
 
-Analysis code and data for examining Eriophorum vaginatum tussock responses to experimental water treatments across a latitudinal gradient in northern Alaska.
+Analysis code and data for: **"Soil drying induces widespread productivity loss but unequal climate vulnerability among ecotypes of a foundational Arctic sedge"** (Gewirtzman et al., *Functional Ecology*).
 
 ## Project Overview
 
-This repository contains the analysis code for a study examining how Arctic tundra plants respond to different soil moisture conditions. The experiment collected tussocks from three sites along a latitudinal gradient (Sagwon, Toolik Lake, and Coldfoot) and subjected them to three water treatments (Wet, Dry, and Deep) in a common garden experiment.
+This study examines how *Eriophorum vaginatum* tussocks from three populations along a latitudinal gradient in northern Alaska (Sagwon, Toolik Lake, Coldfoot) respond to experimental water table manipulation (Wet, Dry, Deep) in a common garden at Toolik Field Station.
 
-### Measurements analyzed:
+### Measurements
+
 - Soil moisture dynamics
 - Plant phenology and growth
-- Canopy development (NDVI/LAI)
-- Gas exchange (Amax, gs)
-- Water potential
-- A/Ci curve parameters
-- Carbon isotopes (δ13C)
+- Canopy structure (NDVI, LAI)
+- Leaf gas exchange (Amax, stomatal conductance)
+- A/Ci curve parameters (Vcmax, Jmax)
+- Pre-dawn water potential
+- Carbon isotopes (d13C) and water use efficiency
 - Productivity relationships
 
 ## Repository Structure
 
 ```
-project/
-├── R/                          # Analysis scripts
-│   ├── 00_setup.R             # Setup: packages, settings
-│   ├── 01_soil_moisture.R     # Soil moisture analysis
-│   ├── 02_phenology.R         # Phenology analysis
-│   ├── 03_canopy.R            # LAI/NDVI analysis
-│   ├── 04_gas_exchange.R      # Photosynthesis analysis
-│   ├── 05_water_potential.R   # Water potential
-│   ├── 06_aci_curves.R        # A/Ci curves
-│   ├── 07_isotopes.R          # δ13C analysis
-│   ├── 08_combined_phys.R     # Combined physiology plots
-│   ├── 09_productivity.R      # NDVI-GWC relationships
-│   ├── 10_model_diag.R        # Model diagnostics
-│   └── utils/                 # Utility functions
-│       ├── themes.R           # ggplot themes
-│       ├── stats.R            # Statistical functions
-│       └── plotting.R         # Plotting functions
-├── data/
-│   ├── raw/                   # Original data files
-│   └── processed/             # Cleaned data
-└── output/
-    ├── figures/               # Generated figures
-    └── tables/                # Generated tables
+R/                                  # Analysis scripts (run in numerical order)
+  00_setup.R                        # Packages, constants, themes
+  01_soil_moisture.R                # Soil moisture calibration & dynamics
+  02_phenology.R                    # Tiller phenology mixed models & random forest
+  03_canopy.R                       # LAI/NDVI analysis
+  04_gas_exchange.R                 # Amax, gs, iWUE mixed models
+  05_water_potential.R              # Pre-dawn water potential
+  06_aci_curves.R                   # A/Ci curve analysis (uses pre-computed fits)
+  06b_aci_refit.R                   # A/Ci refit: Tcorrect sensitivity analysis
+  07_isotopes.R                     # d13C analysis
+  08_combined_physiology.R          # Combined physiology figures
+  09_productivity.R                 # NDVI-productivity relationships
+  10_model_diagnostics.R            # Model diagnostic plots
+  11_wue_new.R                      # WUE analysis (revised)
+  12_wue_new_2.R                    # WUE analysis (alternative)
+  13_senescence_dates.R             # Senescence date extraction
+  14_productivity2.R                # Productivity (LAI-based)
+  ecotypes_map.R                    # Study site map
+  treatment_timeline.R              # Experimental timeline figure
+  main_workflow.R                   # Runs all scripts in sequence
+  reviewer_phenology_exploration.R  # Segmented regression (reviewer response)
+  reviewer_response_exploration.R   # A/Ci temperature exploration (reviewer response)
+  utils/
+    themes.R                        # ggplot themes
+    stats.R                         # Statistical helper functions
+    plotting.R                      # Plotting helper functions
+
+data/
+  raw/                              # Original data files
+    gwc_calibration.csv             # Gravimetric water content calibration
+    Ecotypes2017_Drying_*.csv       # Soil moisture, phenology, NDVI, Amax, etc.
+    A_Ci Ouputs.csv                 # Original A/Ci curve fits
+    A_Ci Ouputs_Corrected.csv       # A/Ci fits with metadata
+    Ecotypes2017_Drying_A-Ci.csv    # Raw LI-6400 A/Ci curve data
+
+output/
+  figures/                          # Generated PDF/PNG figures
+  tables/                           # Model summaries, CSV tables
+  reviewer_response_summary.md      # Summary of reviewer response analyses
 ```
 
-## Setup and Usage
+## Usage
 
-1. Clone this repository:
-```bash
-git clone https://github.com/yourusername/arctic-grass-water.git
-cd arctic-grass-water
-```
+1. Open `ecotypes_drying.Rproj` in RStudio
+2. Run `source("R/00_setup.R")` to install/load all packages
+3. Run scripts in numerical order (01-14), or use `R/main_workflow.R`
 
-2. Open the R project file (`arctic-grass-water.Rproj`) in RStudio
+Scripts 06b, `reviewer_phenology_exploration.R`, and `reviewer_response_exploration.R` are standalone analyses for the revision and can be run independently after `00_setup.R`.
 
-3. Install required packages:
-```r
-source("R/00_setup.R")  # This will install and load all necessary packages
-```
+## Key R Packages
 
-4. Place raw data files in `data/raw/`:
-- `gwc_calibration.csv`
-- `Ecotypes2017_Drying_Soil Moisture.csv`
-- `Ecotypes2017_Drying_NDVI.csv`
-- `Ecotypes2017_Drying_Phenology.csv`
-- `Ecotypes2017_Drying_Amax.csv`
-- `Ecotypes2017_Drying_Water Potential.csv`
-- `A_Ci Outputs_Corrected.csv`
-- `Ecotypes2017_Drying_d13C.csv`
-
-5. Run analysis scripts in numerical order (00-10)
-
-## Required R Packages
-
-Core packages (installed automatically by 00_setup.R):
-- tidyverse (data manipulation and visualization)
-- lme4, lmerTest (mixed models)
-- emmeans (estimated marginal means)
-- ggridges (ridge plots)
-- patchwork (combining plots)
-- and others (see 00_setup.R for complete list)
-
-## Output
-
-Analysis outputs are organized in:
-- `output/figures/`: PDF figures of all analyses
-- `output/tables/`: Statistical summaries and model results
+Installed automatically by `00_setup.R`:
+- **tidyverse** -- data wrangling and visualization
+- **lme4 / lmerTest** -- linear mixed-effects models
+- **emmeans** -- estimated marginal means and contrasts
+- **randomForest** -- variable importance
+- **patchwork** -- multi-panel figures
+- **plantecophys** -- A/Ci curve fitting (used in 06b_aci_refit.R)
+- **segmented** -- piecewise regression (used in reviewer_phenology_exploration.R)
 
 ## Contact
 
 Jon Gewirtzman
-Yale University  
+Yale University
 jonathan.gewirtzman@yale.edu
-
-
-## Citation
-
-[citation information when available]

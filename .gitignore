@@ -1,4 +1,20 @@
+# R / RStudio
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# OS
+.DS_Store
+
+# Manuscript drafts (not code)
+Paper Drafts and Versions/
+
+# Ad-hoc Rplots saved to repo root
+Rplot*.png
+
+# Execution logs (machine-specific)
+output/logs/
+
+# Claude worktrees
+.claude/
