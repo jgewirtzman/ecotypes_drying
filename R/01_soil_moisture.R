@@ -155,7 +155,7 @@ bar_plot_raw <- ggplot(raw_means, aes(x = `Treatment Name`, y = mean_gwc, fill =
 combined_plot <- ts_plot + bar_plot_raw +
   plot_layout(ncol = 2, widths = c(2, 1)) +
   plot_annotation(tag_levels = 'a') &
-  theme(legend.position = "top", plot.tag = element_text(face = "plain"))
+  theme(legend.position = "bottom", plot.tag = element_text(face = "plain"))
 
 # Save plots
 ggsave("output/figures/fig2_soil_moisture_combined.pdf", combined_plot, width = 8, height = 6, units="in", dpi=600)
