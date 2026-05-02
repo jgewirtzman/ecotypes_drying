@@ -426,19 +426,13 @@ combined_layout <- wrap_elements(final_plot_wue) | (p1a / p2a) +
 print(combined_layout)
 
 # Save the combined figure with plot letters
-ggsave("output/figures/fig6_wue_isotopes_combined.pdf",
-       combined_layout,
-       width = 12,
-       height = 6,
-       units = "in",
-       dpi = 600,
+ggsave("output/figures/wue_isotopes_combined.pdf", 
+       combined_layout, 
+       width = 12, 
+       height = 6, 
+       units = "in", 
+       dpi = 600, 
        device = cairo_pdf)
-ggsave("output/figures/fig6_wue_isotopes_combined.png",
-       combined_layout,
-       width = 12,
-       height = 6,
-       units = "in",
-       dpi = 300)
 
-cat("\nFigure saved to: output/figures/fig6_wue_isotopes_combined.pdf\n")
+cat("\nFigure saved to: output/figures/wue_isotopes_combined.pdf\n")
 cat("Plot letters (A, B, C, ...) have been added to each panel\n")
