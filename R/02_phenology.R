@@ -139,7 +139,8 @@ final_plot <- wrap_plots(
 ) &
   theme(legend.position = "top")
 
-ggsave("output/figures/phenology_combined.pdf", final_plot, width = 8, height = 7, units = "in", dpi = 600)
+ggsave("output/figures/fig3_phenology_combined.pdf", final_plot, width = 8, height = 7, units = "in", dpi = 600)
+ggsave("output/figures/fig3_phenology_combined.png", final_plot, width = 8, height = 7, units = "in", dpi = 300)
 
 # ----------------------------------
 # Step 8: Save Fixed Effects Summary as a Polished Table

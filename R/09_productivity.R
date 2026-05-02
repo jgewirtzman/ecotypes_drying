@@ -81,8 +81,10 @@ productivity_plot <- ggplot(ndvi_gwc_merged,
   guides(color = guide_legend(title = "Population"))
 
 # Save plot
-ggsave("output/figures/productivity_relationship.pdf", 
+ggsave("output/figures/fig7_productivity_relationship.pdf",
        productivity_plot, width = 6, height = 6, dpi=600)
+ggsave("output/figures/fig7_productivity_relationship.png",
+       productivity_plot, width = 6, height = 6, dpi=300)
 
 # Fit models and save statistics
 full_model <- lm(ndvi_auc ~ gwc_auc * Population * `Treatment Name`, 

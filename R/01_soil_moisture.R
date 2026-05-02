@@ -157,7 +157,8 @@ combined_plot <- ts_plot + bar_plot_raw +
   theme(legend.position = "top")
 
 # Save plots
-ggsave("output/figures/soil_moisture_combined.pdf", combined_plot, width = 8, height = 6, units="in", dpi=600)
+ggsave("output/figures/fig2_soil_moisture_combined.pdf", combined_plot, width = 8, height = 6, units="in", dpi=600)
+ggsave("output/figures/fig2_soil_moisture_combined.png", combined_plot, width = 8, height = 6, units="in", dpi=300)
 #ggsave("output/figures/soil_moisture_timeseries.pdf", ts_plot, width = 8, height = 8)
 #ggsave("output/figures/soil_moisture_bars.pdf", bar_plot_raw, width = 4, height = 8)
 

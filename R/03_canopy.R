@@ -223,7 +223,8 @@ final_ndvi_plot <- plot_metrics(ndvi_time_series, ndvi_violin, ndvi_rf_plot)
 final_biomass_plot <- plot_metrics(biomass_time_series, biomass_violin, biomass_rf_plot)
 
 # Save the plots
-ggsave("output/figures/canopy_lai.pdf", final_lai_plot, width = 8, height = 8, units = "in", dpi = 600)
+ggsave("output/figures/fig4_canopy_lai.pdf", final_lai_plot, width = 8, height = 8, units = "in", dpi = 600)
+ggsave("output/figures/fig4_canopy_lai.png", final_lai_plot, width = 8, height = 8, units = "in", dpi = 300)
 ggsave("output/figures/canopy_ndvi.pdf", final_ndvi_plot, width = 10, height = 12, units = "in", dpi = 600)
 ggsave("output/figures/canopy_biomass.pdf", final_biomass_plot, width = 10, height = 12, units = "in", dpi = 600)
 

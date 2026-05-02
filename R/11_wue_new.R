@@ -484,11 +484,17 @@ combined_layout <- wrap_elements(final_plot_wue) | (p1a / p2a) +
 print(combined_layout)
 
 # Save the combined figure
-ggsave("output/figures/wue_isotopes_combined.pdf", 
-       combined_layout, 
-       width = 10, 
-       height = 8, 
-       units = "in", 
-       dpi = 600, 
+ggsave("output/figures/fig6_wue_isotopes_combined.pdf",
+       combined_layout,
+       width = 10,
+       height = 8,
+       units = "in",
+       dpi = 600,
        device = cairo_pdf)
+ggsave("output/figures/fig6_wue_isotopes_combined.png",
+       combined_layout,
+       width = 10,
+       height = 8,
+       units = "in",
+       dpi = 300)
 

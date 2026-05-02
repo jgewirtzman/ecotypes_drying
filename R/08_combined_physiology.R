@@ -42,7 +42,8 @@ final_plot <- ((wpot_plot | amax_plot) /
 
 
 # Save combined plot
-ggsave("output/figures/combined_physiology.pdf", final_plot, width = 8, height = 8, dpi = 600)
+ggsave("output/figures/fig5_combined_physiology.pdf", final_plot, width = 8, height = 8, dpi = 600)
+ggsave("output/figures/fig5_combined_physiology.png", final_plot, width = 8, height = 8, dpi = 300)
 
 
 

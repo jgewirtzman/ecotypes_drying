@@ -121,3 +121,5 @@ final_map <- ggdraw() +
 
 # Display the map
 final_map
+ggsave("output/figures/fig1_map.pdf", final_map, width = 10, height = 8, dpi = 600)
+ggsave("output/figures/fig1_map.png", final_map, width = 10, height = 8, dpi = 300)
