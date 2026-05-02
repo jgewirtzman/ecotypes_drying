@@ -1,4 +1,8 @@
 # 00_setup.R
+# Ensure UTF-8 locale so plot text (e.g., per-mil ‰) renders via cairo/Pango
+# instead of being rejected as invalid bytes when run from Rscript.
+suppressWarnings(Sys.setlocale("LC_ALL", "en_US.UTF-8"))
+
 # Get all loaded packages
 loaded_packages <- names(sessionInfo()$otherPkgs)
 

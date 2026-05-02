@@ -1,5 +1,6 @@
 Mixed Model Summary:
-Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
 Formula: GWC ~ `Treatment Name` * Population + (1 | Tag)
    Data: soil_gwc
 
@@ -16,29 +17,48 @@ Random effects:
 Number of obs: 374, groups:  Tag, 54
 
 Fixed effects:
-                                        Estimate Std. Error       df t value Pr(>|t|)    
-(Intercept)                              4.27840    0.20512 44.36783  20.858  < 2e-16 ***
-`Treatment Name`Dry                     -1.15697    0.29008 44.36783  -3.988 0.000245 ***
-`Treatment Name`Deep                    -2.23799    0.29008 44.36783  -7.715 9.84e-10 ***
-PopulationToolik                         0.34812    0.29008 44.36783   1.200 0.236471    
-PopulationColdfoot                       0.51664    0.29008 44.36783   1.781 0.081754 .  
-`Treatment Name`Dry:PopulationToolik     0.22247    0.41177 45.01843   0.540 0.591674    
-`Treatment Name`Deep:PopulationToolik   -0.41846    0.41023 44.36783  -1.020 0.313228    
-`Treatment Name`Dry:PopulationColdfoot   0.04073    0.41074 44.57582   0.099 0.921452    
-`Treatment Name`Deep:PopulationColdfoot -0.36211    0.41023 44.36783  -0.883 0.382156    
+                                        Estimate Std. Error       df t value
+(Intercept)                              4.27840    0.20512 44.36783  20.858
+`Treatment Name`Dry                     -1.15697    0.29008 44.36783  -3.988
+`Treatment Name`Deep                    -2.23799    0.29008 44.36783  -7.715
+PopulationToolik                         0.34812    0.29008 44.36783   1.200
+PopulationColdfoot                       0.51664    0.29008 44.36783   1.781
+`Treatment Name`Dry:PopulationToolik     0.22247    0.41177 45.01843   0.540
+`Treatment Name`Deep:PopulationToolik   -0.41846    0.41023 44.36783  -1.020
+`Treatment Name`Dry:PopulationColdfoot   0.04073    0.41074 44.57582   0.099
+`Treatment Name`Deep:PopulationColdfoot -0.36211    0.41023 44.36783  -0.883
+                                        Pr(>|t|)    
+(Intercept)                              < 2e-16 ***
+`Treatment Name`Dry                     0.000245 ***
+`Treatment Name`Deep                    9.84e-10 ***
+PopulationToolik                        0.236471    
+PopulationColdfoot                      0.081754 .  
+`Treatment Name`Dry:PopulationToolik    0.591674    
+`Treatment Name`Deep:PopulationToolik   0.313228    
+`Treatment Name`Dry:PopulationColdfoot  0.921452    
+`Treatment Name`Deep:PopulationColdfoot 0.382156    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
-             (Intr) `TrtmntNm`Dr `TrtmntNm`Dp PpltnT PpltnC `TNm`Dr:PT `TNm`Dp:PT `TNm`Dr:PC
-`TrtmntNm`Dr -0.707                                                                         
-`TrtmntNm`Dp -0.707  0.500                                                                  
-PopulatnTlk  -0.707  0.500        0.500                                                     
-PopltnCldft  -0.707  0.500        0.500        0.500                                        
-`TNm`Dry:PT   0.498 -0.704       -0.352       -0.704 -0.352                                 
-`TNm`Dp:PpT   0.500 -0.354       -0.707       -0.707 -0.354  0.498                          
-`TNm`Dry:PC   0.499 -0.706       -0.353       -0.353 -0.706  0.498      0.250               
-`TNm`Dp:PpC   0.500 -0.354       -0.707       -0.354 -0.707  0.249      0.500      0.499    
+             (Intr) `TrtmntNm`Dr `TrtmntNm`Dp PpltnT PpltnC `TNm`Dr:PT
+`TrtmntNm`Dr -0.707                                                   
+`TrtmntNm`Dp -0.707  0.500                                            
+PopulatnTlk  -0.707  0.500        0.500                               
+PopltnCldft  -0.707  0.500        0.500        0.500                  
+`TNm`Dry:PT   0.498 -0.704       -0.352       -0.704 -0.352           
+`TNm`Dp:PpT   0.500 -0.354       -0.707       -0.707 -0.354  0.498    
+`TNm`Dry:PC   0.499 -0.706       -0.353       -0.353 -0.706  0.498    
+`TNm`Dp:PpC   0.500 -0.354       -0.707       -0.354 -0.707  0.249    
+             `TNm`Dp:PT `TNm`Dr:PC
+`TrtmntNm`Dr                      
+`TrtmntNm`Dp                      
+PopulatnTlk                       
+PopltnCldft                       
+`TNm`Dry:PT                       
+`TNm`Dp:PpT                       
+`TNm`Dry:PC   0.250               
+`TNm`Dp:PpC   0.500      0.499    
 
 ANOVA Table:
 Type III Analysis of Variance Table with Satterthwaite's method

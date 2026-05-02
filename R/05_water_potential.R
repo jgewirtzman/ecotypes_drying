@@ -63,8 +63,8 @@ wpot_plot <- ggplot(wpot, aes(x = Population, y = `Pressure (MPa)`,
             aes(y = y_position, label = .group),
             position = position_dodge(width = 0.8),
             size = 5, color = "black") +
-  scale_color_manual(values = TREATMENT_COLORS) +
-  scale_fill_manual(values = TREATMENT_COLORS) +
+  scale_color_manual(values = TREATMENT_COLORS, name = "Treatment") +
+  scale_fill_manual(values = TREATMENT_COLORS, name = "Treatment") +
   labs(y = "Water potential (MPa)") +
   theme_classic() +
   theme(legend.position = "top") +

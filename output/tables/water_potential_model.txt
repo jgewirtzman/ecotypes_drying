@@ -1,6 +1,8 @@
 Water Potential Model Summary:
-Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
-Formula: `Pressure (MPa)` ~ Population * `Treatment Name` + (1 | Tag) +      (1 | Date)
+Linear mixed model fit by REML. t-tests use Satterthwaite's method [
+lmerModLmerTest]
+Formula: `Pressure (MPa)` ~ Population * `Treatment Name` + (1 | Tag) +  
+    (1 | Date)
    Data: wpot
 
 REML criterion at convergence: 52.5
@@ -17,29 +19,48 @@ Random effects:
 Number of obs: 84, groups:  Tag, 54; Date, 3
 
 Fixed effects:
-                                        Estimate Std. Error       df t value Pr(>|t|)    
-(Intercept)                             -1.24379    0.10260 22.27608 -12.122 2.77e-11 ***
-PopulationToolik                        -0.02000    0.13310 73.32424  -0.150    0.881    
-PopulationColdfoot                       0.00500    0.13310 73.32424   0.038    0.970    
-`Treatment Name`Dry                      0.06761    0.14173 74.24525   0.477    0.635    
-`Treatment Name`Deep                    -0.16000    0.13310 73.32424  -1.202    0.233    
-PopulationToolik:`Treatment Name`Dry     0.05750    0.19965 73.32424   0.288    0.774    
-PopulationColdfoot:`Treatment Name`Dry  -0.13625    0.19965 73.32424  -0.682    0.497    
-PopulationToolik:`Treatment Name`Deep    0.04500    0.18823 73.32424   0.239    0.812    
-PopulationColdfoot:`Treatment Name`Deep  0.15000    0.18823 73.32424   0.797    0.428    
+                                        Estimate Std. Error       df t value
+(Intercept)                             -1.24379    0.10260 22.27608 -12.122
+PopulationToolik                        -0.02000    0.13310 73.32424  -0.150
+PopulationColdfoot                       0.00500    0.13310 73.32424   0.038
+`Treatment Name`Dry                      0.06761    0.14173 74.24525   0.477
+`Treatment Name`Deep                    -0.16000    0.13310 73.32424  -1.202
+PopulationToolik:`Treatment Name`Dry     0.05750    0.19965 73.32424   0.288
+PopulationColdfoot:`Treatment Name`Dry  -0.13625    0.19965 73.32424  -0.682
+PopulationToolik:`Treatment Name`Deep    0.04500    0.18823 73.32424   0.239
+PopulationColdfoot:`Treatment Name`Deep  0.15000    0.18823 73.32424   0.797
+                                        Pr(>|t|)    
+(Intercept)                             2.77e-11 ***
+PopulationToolik                           0.881    
+PopulationColdfoot                         0.970    
+`Treatment Name`Dry                        0.635    
+`Treatment Name`Deep                       0.233    
+PopulationToolik:`Treatment Name`Dry       0.774    
+PopulationColdfoot:`Treatment Name`Dry     0.497    
+PopulationToolik:`Treatment Name`Deep      0.812    
+PopulationColdfoot:`Treatment Name`Deep    0.428    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
-                        (Intr) PpltnT PpltnC `TrtmntNm`Dr `TrtmntNm`Dp PpltnTlk:`TrtmntNm`Dr PpltnCldft:`TrtmntNm`Dr
-PopulatnTlk             -0.649                                                                                      
-PopltnCldft             -0.649  0.500                                                                               
-`TrtmntNm`Dr            -0.601  0.470  0.470                                                                        
-`TrtmntNm`Dp            -0.649  0.500  0.500  0.470                                                                 
-PpltnTlk:`TrtmntNm`Dr    0.432 -0.667 -0.333 -0.704       -0.333                                                    
-PpltnCldft:`TrtmntNm`Dr  0.432 -0.333 -0.667 -0.704       -0.333        0.500                                       
-PpltnTlk:`TrtmntNm`Dp    0.459 -0.707 -0.354 -0.332       -0.707        0.471                 0.236                 
-PpltnCldft:`TrtmntNm`Dp  0.459 -0.354 -0.707 -0.332       -0.707        0.236                 0.471                 
+                        (Intr) PpltnT PpltnC `TrtmntNm`Dr `TrtmntNm`Dp
+PopulatnTlk             -0.649                                        
+PopltnCldft             -0.649  0.500                                 
+`TrtmntNm`Dr            -0.601  0.470  0.470                          
+`TrtmntNm`Dp            -0.649  0.500  0.500  0.470                   
+PpltnTlk:`TrtmntNm`Dr    0.432 -0.667 -0.333 -0.704       -0.333      
+PpltnCldft:`TrtmntNm`Dr  0.432 -0.333 -0.667 -0.704       -0.333      
+PpltnTlk:`TrtmntNm`Dp    0.459 -0.707 -0.354 -0.332       -0.707      
+PpltnCldft:`TrtmntNm`Dp  0.459 -0.354 -0.707 -0.332       -0.707      
+                        PpltnTlk:`TrtmntNm`Dr PpltnCldft:`TrtmntNm`Dr
+PopulatnTlk                                                          
+PopltnCldft                                                          
+`TrtmntNm`Dr                                                         
+`TrtmntNm`Dp                                                         
+PpltnTlk:`TrtmntNm`Dr                                                
+PpltnCldft:`TrtmntNm`Dr  0.500                                       
+PpltnTlk:`TrtmntNm`Dp    0.471                 0.236                 
+PpltnCldft:`TrtmntNm`Dp  0.236                 0.471                 
                         PpltnTlk:`TrtmntNm`Dp
 PopulatnTlk                                  
 PopltnCldft                                  

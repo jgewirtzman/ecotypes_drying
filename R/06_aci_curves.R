@@ -47,7 +47,7 @@ create_point_plot <- function(data, emmeans_df, y_var, y_lab) {
                       group = `Treatment Name`),
                   position = position_dodge(width = 0.8), 
                   width = 0.2) +
-    scale_fill_manual(values = TREATMENT_COLORS) +
+    scale_fill_manual(values = TREATMENT_COLORS, name = "Treatment") +
     theme_classic() +
     labs(y = y_lab) +
     theme(legend.position = "top")
@@ -58,7 +58,7 @@ scatter_plot <- ggplot(aci, aes(x = Jmax, y = Vcmax)) +
   geom_point(aes(shape = Population, color = `Treatment Name`), 
              size = 3, alpha = 0.8) +
   geom_smooth(method = "lm", color = "black", se = TRUE) +
-  scale_color_manual(values = TREATMENT_COLORS) +
+  scale_color_manual(values = TREATMENT_COLORS, name = "Treatment") +
   scale_shape_manual(values = c(16, 17, 18)) +
   theme_classic() +
   labs(x = expression(J[max]~(mu*mol~m^-2~s^-1)),

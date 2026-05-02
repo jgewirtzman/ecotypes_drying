@@ -117,9 +117,10 @@ inset <- ggplot() +
 # Combine the maps
 final_map <- ggdraw() +
   draw_plot(main_map) +
-  draw_plot(inset, x = 0.65, y = 0.65, width = 0.3, height = 0.3)
+  draw_plot(inset, x = 0.65, y = 0.65, width = 0.3, height = 0.3) +
+  theme(plot.background = element_rect(fill = "white", color = NA))
 
 # Display the map
 final_map
-ggsave("output/figures/fig1_map.pdf", final_map, width = 10, height = 8, dpi = 600)
-ggsave("output/figures/fig1_map.png", final_map, width = 10, height = 8, dpi = 300)
+ggsave("output/figures/fig1_map.pdf", final_map, width = 7, height = 5, dpi = 600, bg = "white")
+ggsave("output/figures/fig1_map.png", final_map, width = 7, height = 5, dpi = 300, bg = "white")

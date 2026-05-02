@@ -29,7 +29,7 @@ plot_pheno_metric <- function(data, metric, y_label) {
     stat_summary(fun = mean, geom = "point", size = 3) +
     stat_summary(fun.data = mean_cl_boot, geom = "errorbar", width = 0.3) +
     stat_summary(fun = mean, geom = "line", size = 1) +
-    scale_color_manual(values = TREATMENT_COLORS) +
+    scale_color_manual(values = TREATMENT_COLORS, name = "Treatment") +
     labs(x = "Day of Year", y = y_label, color = "Treatment") +
     theme_classic() +
     facet_wrap(~ Population, ncol = 3) +
@@ -136,8 +136,9 @@ final_plot <- wrap_plots(
   ncol = 2,
   widths = c(4, 1),
   guides = "collect"
-) &
-  theme(legend.position = "top")
+) +
+  plot_annotation(tag_levels = 'a') &
+  theme(legend.position = "bottom", plot.tag = element_text(face = "plain"))
 
 ggsave("output/figures/fig3_phenology_combined.pdf", final_plot, width = 8, height = 7, units = "in", dpi = 600)
 ggsave("output/figures/fig3_phenology_combined.png", final_plot, width = 8, height = 7, units = "in", dpi = 300)

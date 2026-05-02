@@ -12,7 +12,7 @@ Population:`Treatment Name`          4  16.45   4.112  0.2468 0.9096988
 gwc_auc:Population:`Treatment Name`  4  41.67  10.418  0.6253 0.6474808    
 Residuals                           36 599.76  16.660                      
 ---
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Simple Model Summary:
 
@@ -28,7 +28,7 @@ Coefficients:
 (Intercept)   10.933      4.920   2.222   0.0306 * 
 gwc_auc        0.395      0.117   3.376   0.0014 **
 ---
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 4.531 on 52 degrees of freedom
 Multiple R-squared:  0.1798,	Adjusted R-squared:  0.164 

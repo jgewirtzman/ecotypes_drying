@@ -85,8 +85,8 @@ create_phys_plot <- function(data, response_var, y_label) {
               aes(y = y_position, label = .group),
               position = position_dodge(width = 0.8),
               size = 5, color = "black") +
-    scale_color_manual(values = TREATMENT_COLORS) +
-    scale_fill_manual(values = TREATMENT_COLORS) +
+    scale_color_manual(values = TREATMENT_COLORS, name = "Treatment") +
+    scale_fill_manual(values = TREATMENT_COLORS, name = "Treatment") +
     labs(y = y_label) +
     theme_classic() +
     theme(legend.position = "top")

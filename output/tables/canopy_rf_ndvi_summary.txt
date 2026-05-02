@@ -6,11 +6,11 @@ Call:
                      Number of trees: 10000
 No. of variables tried at each split: 1
 
-          Mean of squared residuals: 0.007424694
-                    % Var explained: 44.8
+          Mean of squared residuals: 0.007395425
+                    % Var explained: 45.02
 
 Variable Importance:
             %IncMSE IncNodePurity
-Population 125.6664     0.2763764
-Treatment  219.7693     0.8196608
-DOY        183.2530     0.9582310
+Population 123.8902     0.2782964
+Treatment  221.7391     0.8178242
+DOY        187.4845     0.9701621

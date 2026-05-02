@@ -207,12 +207,17 @@ write_csv(as.data.frame(importance(biomass_rf)), "output/tables/canopy_rf_biomas
 # ----------------------------------
 
 plot_metrics <- function(time_series_plot, violin_plot, importance_plot) {
-  # First combine the top plots with 2:1 width ratio
-  top_row <- time_series_plot + violin_plot + plot_layout(widths = c(2, 1))
-  
-  # Then combine top and bottom with the height ratio (4:1)
-  combined <- top_row / importance_plot + plot_layout(heights = c(4, 1))
-  
+  # Collect the Treatment legend at the bottom of the top row (below a and b)
+  top_row <- time_series_plot + violin_plot +
+    plot_layout(widths = c(2, 1), guides = "collect") +
+    plot_annotation(theme = theme(legend.position = "bottom",
+                                  legend.direction = "horizontal"))
+
+  combined <- top_row / importance_plot +
+    plot_layout(heights = c(4, 1)) +
+    plot_annotation(tag_levels = 'a') &
+    theme(plot.tag = element_text(face = "plain"))
+
   return(combined)
 }
 

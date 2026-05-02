@@ -21,29 +21,50 @@ common_theme <- theme_classic() +
     plot.margin = unit(c(0.2, 0.2, 0.2, 0.2), "cm")
   )
 
-# Remove legend for water potential plot
+# Remove legend only from water potential (Treatment shown via amax/cond at bottom)
 wpot_plot <- wpot_plot + theme(legend.position = "none")
 
-# Modify A/Ci plot to show only shape (population) legend
-aci_plot <- aci_plot & guides(color = "none", fill = "none")&theme(legend.position = "bottom")
+# scatter (panel f): Population shape legend inside the panel; color suppressed
+# so Treatment is instead collected from amax/cond at the figure bottom.
+scatter_fig5 <- scatter_plot +
+  guides(
+    color = "none",
+    shape = guide_legend(ncol = 1)
+  ) +
+  theme(
+    legend.position = c(0.02, 0.98),
+    legend.justification = c(0, 1),
+    legend.background = element_rect(fill = alpha("white", 0.7), color = NA),
+    legend.text = element_text(size = 8),
+    legend.title = element_text(size = 8),
+    legend.key.size = unit(0.35, "cm")
+  )
 
+# Rebuild aci composite.
+# guides = "keep" prevents the outer guides = "collect" from lifting the
+# Population shape guide out of panel f.
+aci_fig5 <- (vcmax_plot / jmax_plot | scatter_fig5) +
+  plot_layout(guides = "keep")
+aci_fig5 <- aci_fig5 & guides(fill = "none")
 
-# Create final combined plot using all the individual plots
+# Outer layout: collect Treatment color from amax/cond at the bottom.
 final_plot <- ((wpot_plot | amax_plot) /
-                 (cond_plot | aci_plot)) +
+                 (cond_plot | aci_fig5)) +
   plot_layout(guides = "collect") +
   plot_annotation(
+    tag_levels = 'a',
     theme = theme(
-      legend.position = "top",
+      legend.position = "bottom",
       legend.direction = "horizontal",
       legend.justification = "center"
     )
-  )
+  ) &
+  theme(plot.tag = element_text(face = "plain"))
 
 
 # Save combined plot
-ggsave("output/figures/fig5_combined_physiology.pdf", final_plot, width = 8, height = 8, dpi = 600)
-ggsave("output/figures/fig5_combined_physiology.png", final_plot, width = 8, height = 8, dpi = 300)
+ggsave("output/figures/fig5_combined_physiology.pdf", final_plot, width = 9.5, height = 8, dpi = 600)
+ggsave("output/figures/fig5_combined_physiology.png", final_plot, width = 9.5, height = 8, dpi = 300)
 
 
 

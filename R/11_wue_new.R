@@ -110,12 +110,16 @@ create_phys_plot <- function(data, response_var, y_label) {
                        ggplot2::aes(y = y_position, label = .group),
                        position = ggplot2::position_dodge(width = 0.8),
                        size = 5, color = "black") +
-    ggplot2::scale_color_manual(values = if (exists("TREATMENT_COLORS", inherits = TRUE))
-      TREATMENT_COLORS else
-        scales::hue_pal()(length(unique(data$TreatmentName)))) +
-    ggplot2::scale_fill_manual(values = if (exists("TREATMENT_COLORS", inherits = TRUE))
-      TREATMENT_COLORS else
-        scales::hue_pal()(length(unique(data$TreatmentName)))) +
+    ggplot2::scale_color_manual(
+      values = if (exists("TREATMENT_COLORS", inherits = TRUE))
+        TREATMENT_COLORS else
+          scales::hue_pal()(length(unique(data$TreatmentName))),
+      name = "Treatment") +
+    ggplot2::scale_fill_manual(
+      values = if (exists("TREATMENT_COLORS", inherits = TRUE))
+        TREATMENT_COLORS else
+          scales::hue_pal()(length(unique(data$TreatmentName))),
+      name = "Treatment") +
     ggplot2::labs(y = y_label) +
     ggplot2::theme_classic() +
     ggplot2::theme(legend.position = "bottom")
@@ -475,20 +479,33 @@ cat("\n===============================================================\n\n")
 
 
 
-# Create side-by-side layout: WUE pairs panel on left, isotope plots on right
-combined_layout <- wrap_elements(final_plot_wue) | (p1a / p2a) +
-  plot_layout(guides = "collect", widths = c(1, 1)) +
-  plot_annotation(tag_levels = 'A')
+# Collect guides within the isotope column (p1a / p2a) so the viridis color
+# ramp appears only once rather than being repeated in each panel.
+ipa_combined <- (p1a / p2a) +
+  plot_layout(guides = "collect") &
+  theme(legend.position = "right")
+
+# Side-by-side layout. final_plot_wue keeps its own bottom legend;
+# ipa_combined shares a single right-side legend for both isotope panels.
+combined_layout <- (final_plot_wue | ipa_combined) +
+  plot_layout(widths = c(1, 1)) +
+  plot_annotation(tag_levels = 'a',
+                  theme = theme(plot.tag = element_text(face = "plain")))
 
 # Print the combined plot
 print(combined_layout)
 
 # Save the combined figure
-ggsave("output/figures/wue_isotopes_combined.pdf", 
-       combined_layout, 
-       width = 10, 
-       height = 8, 
-       units = "in", 
-       dpi = 600, 
+ggsave("output/figures/fig6_wue_isotopes_combined.pdf",
+       combined_layout,
+       width = 10,
+       height = 8,
+       units = "in",
+       dpi = 600,
        device = cairo_pdf)
+# Render PNG from the PDF so per-mil/unicode glyphs match exactly
+system2("pdftoppm",
+        c("-png", "-r", "300", "-singlefile",
+          "output/figures/fig6_wue_isotopes_combined.pdf",
+          "output/figures/fig6_wue_isotopes_combined"))
 
