@@ -210,7 +210,7 @@ plot_metrics <- function(time_series_plot, violin_plot, importance_plot) {
   # Collect the Treatment legend at the bottom of the top row (below a and b)
   top_row <- time_series_plot + violin_plot +
     plot_layout(widths = c(2, 1), guides = "collect") +
-    plot_annotation(theme = theme(legend.position = "top",
+    plot_annotation(theme = theme(legend.position = "bottom",
                                   legend.direction = "horizontal"))
 
   combined <- top_row / importance_plot +
